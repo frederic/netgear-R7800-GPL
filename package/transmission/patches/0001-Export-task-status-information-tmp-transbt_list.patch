@@ -1,0 +1,346 @@
+diff -Nur transmission-2.76.old/daemon/remote.c transmission-2.76/daemon/remote.c
+--- transmission-2.76.old/daemon/remote.c	2013-01-09 09:32:09.610138179 +0800
++++ transmission-2.76/daemon/remote.c	2013-01-09 13:25:35.978451085 +0800
+@@ -10,6 +10,9 @@
+  * $Id: remote.c 13625 2012-12-05 17:29:46Z jordan $
+  */
+ 
++#include <fcntl.h>
++#include <sys/types.h>
++#include <sys/stat.h>
+ #include <assert.h>
+ #include <ctype.h> /* isspace */
+ #include <errno.h>
+@@ -65,6 +68,10 @@
+ #define SPEED_G_STR "GB/s"
+ #define SPEED_T_STR "TB/s"
+ 
++char *statfile = "/tmp/greendownload/statfifo/bt";
++int stat_fd = -1,nwrite;
++char buf_t[32],f_buf[32];
++
+ /***
+ ****
+ ****  Display Utilities
+@@ -77,13 +84,13 @@
+     if (eta < 0)
+         tr_snprintf (buf, buflen, "Unknown");
+     else if (eta < 60)
+-        tr_snprintf (buf, buflen, "%" PRId64 " sec", eta);
++        tr_snprintf (buf, buflen, "%" PRId64 "sec", eta);
+     else if (eta < (60 * 60))
+-        tr_snprintf (buf, buflen, "%" PRId64 " min", eta / 60);
++        tr_snprintf (buf, buflen, "%" PRId64 "min", eta / 60);
+     else if (eta < (60 * 60 * 24))
+-        tr_snprintf (buf, buflen, "%" PRId64 " hrs", eta / (60 * 60));
++        tr_snprintf (buf, buflen, "%" PRId64 "hrs", eta / (60 * 60));
+     else
+-        tr_snprintf (buf, buflen, "%" PRId64 " days", eta / (60 * 60 * 24));
++        tr_snprintf (buf, buflen, "%" PRId64 "days", eta / (60 * 60 * 24));
+ }
+ 
+ static char*
+@@ -228,6 +235,7 @@
+ static tr_option opts[] =
+ {
+     { 'a', "add",                    "Add torrent files by filename or URL", "a",  0, NULL },
++    { 'L', "print-size",             "print total sizes of files in a torrent file", "L",  0, NULL },
+     { 970, "alt-speed",              "Use the alternate Limits", "as",  0, NULL },
+     { 971, "no-alt-speed",           "Don't use the alternate Limits", "AS",  0, NULL },
+     { 972, "alt-speed-downlimit",    "max alternate download speed (in "SPEED_K_STR")", "asd",  1, "<speed>" },
+@@ -363,6 +371,7 @@
+         case TR_OPT_ERR:
+         case TR_OPT_UNK:
+         case 'a': /* add torrent */
++        case 'L': /* print total sizes of files in a torrent */
+         case 'b': /* debug */
+         case 'n': /* auth */
+         case 810: /* authenv */
+@@ -719,6 +728,8 @@
+     "rateUpload",
+     "sizeWhenDone",
+     "status",
++    "totalSize",
++    "bandwidthPriority",
+     "uploadRatio"
+ };
+ 
+@@ -775,26 +786,30 @@
+     {
+         case TR_STATUS_DOWNLOAD_WAIT:
+         case TR_STATUS_SEED_WAIT:
+-            tr_strlcpy (buf, "Queued", buflen);
++            /*tr_strlcpy (buf, "Queued", buflen);*/
++	    tr_strlcpy( buf, "Downloading", buflen );
+             break;
+ 
+         case TR_STATUS_STOPPED:
+             if (tr_bencDictFindBool (t, "isFinished", &boolVal) && boolVal)
+-                tr_strlcpy (buf, "Finished", buflen);
++                /*tr_strlcpy (buf, "Finished", buflen);*/
++		tr_strlcpy( buf, "Complete", buflen);
+             else
+-                tr_strlcpy (buf, "Stopped", buflen);
++                /*tr_strlcpy (buf, "Stopped", buflen);*/
++		tr_strlcpy( buf, "Paused", buflen);
+             break;
+ 
+         case TR_STATUS_CHECK_WAIT:
+         case TR_STATUS_CHECK: {
+-            const char * str = status == TR_STATUS_CHECK_WAIT
++	    tr_strlcpy( buf, "Downloading", buflen);
++            /*const char * str = status == TR_STATUS_CHECK_WAIT
+                              ? "Will Verify"
+                              : "Verifying";
+             double percent;
+             if (tr_bencDictFindReal (t, "recheckProgress", &percent))
+                 tr_snprintf (buf, buflen, "%s (%.0f%%)", str, floor (percent*100.0));
+             else
+-                tr_strlcpy (buf, str, buflen);
++                tr_strlcpy (buf, str, buflen);*/
+ 
+             break;
+         }
+@@ -806,18 +821,23 @@
+             tr_bencDictFindInt (t, "peersGettingFromUs", &fromUs);
+             tr_bencDictFindInt (t, "peersSendingToUs", &toUs);
+             if (fromUs && toUs)
+-                tr_strlcpy (buf, "Up & Down", buflen);
++                /*tr_strlcpy (buf, "Up & Down", buflen);*/
++		tr_strlcpy( buf, "Downloading", buflen );
+             else if (toUs)
+                 tr_strlcpy (buf, "Downloading", buflen);
+             else if (fromUs) {
+                 int64_t leftUntilDone = 0;
+                 tr_bencDictFindInt (t, "leftUntilDone", &leftUntilDone);
+                 if (leftUntilDone > 0)
+-                    tr_strlcpy (buf, "Uploading", buflen);
++                    /*tr_strlcpy (buf, "Uploading", buflen);*/
++		     tr_strlcpy( buf, "Downloading", buflen );
+                 else
+-                    tr_strlcpy (buf, "Seeding", buflen);
++                    /*tr_strlcpy (buf, "Seeding", buflen);*/
++		    tr_strlcpy( buf, "Complete", buflen );
++
+             } else {
+-                tr_strlcpy (buf, "Idle", buflen);
++                /*tr_strlcpy (buf, "Idle", buflen);*/
++		tr_strlcpy( buf, "Downloading", buflen );
+             }
+             break;
+         }
+@@ -833,6 +853,9 @@
+ static const char *bandwidthPriorityNames[] =
+     { "Low", "Normal", "High", "Invalid" };
+ 
++static const char *bandwidthPriorityNum[] =
++    { "-10", "0", "10", "Invalid" };
++
+ static void
+ printDetails (tr_benc * top)
+ {
+@@ -1243,6 +1266,14 @@
+         int64_t total_size=0;
+         double total_up=0, total_down=0;
+         char haveStr[32];
++        FILE *fp;
++        int suc=1;
++        fp=fopen("/tmp/transbt_list","w+");
++        if( fp==NULL )
++        {
++                perror("dni:fopen failure");
++                suc=0;
++        }
+ 
+         printf ("%-4s   %-4s  %9s  %-8s  %6s  %6s  %-5s  %-11s  %s\n",
+                 "ID", "Done", "Have", "ETA", "Up", "Down", "Ratio", "Status",
+@@ -1250,7 +1281,7 @@
+ 
+         for (i = 0, n = tr_bencListSize (list); i < n; ++i)
+         {
+-            int64_t      id, eta, status, up, down;
++            int64_t      id, eta, status, up, down, jj;
+             int64_t      sizeWhenDone, leftUntilDone;
+             double       ratio;
+             const char * name;
+@@ -1269,6 +1300,7 @@
+                 char statusStr[64];
+                 char ratioStr[32];
+                 char doneStr[8];
++		char buf[32];
+                 int64_t error;
+                 char errorMark;
+ 
+@@ -1287,6 +1319,10 @@
+                     errorMark = '*';
+                 else
+                     errorMark = ' ';
++                if( tr_bencDictFindInt( d, "totalSize", &jj ) )
++                        strlsize( buf, jj, sizeof( buf ) );
++                if (tr_bencDictFindInt (d, "bandwidthPriority", &jj))
++                        printf ("  Bandwidth Priority: %s\n",bandwidthPriorityNames[(jj + 1) & 3]);
+                 printf (
+                     "%4d%c  %4s  %9s  %-8s  %6.1f  %6.1f  %5s  %-11s  %s\n",
+                   (int)id, errorMark,
+@@ -1298,13 +1334,26 @@
+                     strlratio2 (ratioStr, ratio, sizeof (ratioStr)),
+                     getStatusString (d, statusStr, sizeof (statusStr)),
+                     name);
+-
++                if( suc ){
++                        //if( strncmp( doneStr,"100%",4 ) )
++                        fprintf(fp,"%03d*%s*%s*%-8s*%6.1f*%6.1f*%5s*%s*%s*%s\n",
++                                        (int)id,
++                                        doneStr,
++                                        buf,
++                                        etaStr,
++                                        up/(double)tr_speed_K,
++                                        down/(double)tr_speed_K,
++                                        strlratio2( ratioStr, ratio, sizeof( ratioStr ) ),
++                                        getStatusString( d, statusStr, sizeof( statusStr ) ),
++                                        name,bandwidthPriorityNum[(jj + 1) & 3] );
++                }
+                 total_up += up;
+                 total_down += down;
+                 total_size += sizeWhenDone - leftUntilDone;
+             }
+         }
+-
++        if( suc )
++                fclose(fp);
+         printf ("Sum:         %9s            %6.1f  %6.1f\n",
+                 strlsize (haveStr, total_size, sizeof (haveStr)),
+                 total_up/ (double)tr_speed_K,
+@@ -1635,6 +1684,7 @@
+     }
+ }
+ 
++
+ static char id[4096];
+ 
+ static int
+@@ -1704,7 +1754,10 @@
+                 if (tr_bencDictFindDict (&top, ARGUMENTS, &b)
+                         && tr_bencDictFindDict (b, "torrent-added", &b)
+                         && tr_bencDictFindInt (b, "id", &i))
++		{
+                     tr_snprintf (id, sizeof (id), "%"PRId64, i);
++		    sprintf(buf_t,"%03lld",i);
++		}
+                 /* fall-through to default: to give success or failure msg */
+             }
+             default:
+@@ -1859,6 +1912,11 @@
+     tr_benc *tset = 0;
+     tr_benc *tadd = 0;
+ 
++    /* for print sizes of files in a torrent */
++    tr_info inf;
++    tr_ctor * ctor;
++    char buf[128];
++
+     *id = '\0';
+ 
+     while ((c = tr_getopt (getUsage (), argc, argv, opts, &optarg)))
+@@ -1880,6 +1938,27 @@
+                     tr_bencDictAddDict (tadd, ARGUMENTS, 0);
+                     break;
+ 
++                case 'L': /* print total sizes of files in a torrent */
++                    tr_getopt( getUsage( ), argc, argv, opts, &optarg );
++                    if( !optarg )
++                    {
++                            fprintf( stderr, "ERROR: No .torrent file specified.\n" );
++                            fprintf( stderr, "\n" );
++                            return EXIT_FAILURE;
++                    }
++                    ctor = tr_ctorNew( NULL );
++                    tr_ctorSetMetainfoFromFile( ctor, optarg );
++                    if( tr_torrentParse( ctor, &inf ) )
++                   {
++                            fprintf( stderr, "Error parsing .torrent file \"%s\"\n", optarg );
++                            return 1;
++                    }
++                    tr_ctorFree( ctor );
++                    printf( "Name:%s\n", inf.name);
++                    printf( "Total Size:%llu\n", inf.totalSize);
++                    /* for that we don't need to call flush in rest code ousite while loop */
++                    return 0;
++
+                 case 'b': /* debug */
+                     debug = true;
+                     break;
+@@ -2390,7 +2469,8 @@
+ 
+     if (argc < 2) {
+         showUsage ();
+-        return EXIT_FAILURE;
++        /*return EXIT_FAILURE;*/
++	exit_status = EXIT_FAILURE;
+     }
+ 
+     tr_formatter_mem_init (MEM_K, MEM_K_STR, MEM_M_STR, MEM_G_STR, MEM_T_STR);
+@@ -2403,8 +2483,28 @@
+     if (rpcurl == NULL)
+         rpcurl = tr_strdup_printf ("%s:%d%s", host, port, DEFAULT_URL);
+ 
++    if((stat_fd = open(statfile,O_WRONLY|O_NONBLOCK))< 0){
++           printf("open error\n");
++           exit_status = EXIT_FAILURE;
++    }
++
++    memset(buf_t,0,sizeof(buf_t));
++    memset(f_buf,0,sizeof(f_buf));
++    buf_t[0]='\0';
++
+     exit_status = processArgs (rpcurl, argc, (const char**)argv);
+ 
++    if(buf_t[0] != '\0')
++           sprintf(f_buf,"%d %s",exit_status,buf_t);
++    else
++           sprintf(f_buf,"%d",exit_status);
++    if((nwrite = write(stat_fd,f_buf,strlen(f_buf)))<0){
++           if(errno == EAGAIN){
++                   printf("fifo has not been read yeat\n");
++           }
++    }
++    close(stat_fd);
++
+     tr_free (host);
+     tr_free (rpcurl);
+     return exit_status;
+diff -Nur transmission-2.76.old/libtransmission/session.c transmission-2.76/libtransmission/session.c
+--- transmission-2.76.old/libtransmission/session.c	2013-01-09 09:30:26.526135730 +0800
++++ transmission-2.76/libtransmission/session.c	2013-01-09 13:10:08.118451274 +0800
+@@ -322,7 +322,7 @@
+     tr_bencDictAddBool (d, TR_PREFS_KEY_IDLE_LIMIT_ENABLED,              false);
+     tr_bencDictAddStr (d, TR_PREFS_KEY_INCOMPLETE_DIR,                  tr_getDefaultDownloadDir ());
+     tr_bencDictAddBool (d, TR_PREFS_KEY_INCOMPLETE_DIR_ENABLED,          false);
+-    tr_bencDictAddInt (d, TR_PREFS_KEY_MSGLEVEL,                        TR_MSG_INF);
++    tr_bencDictAddInt (d, TR_PREFS_KEY_MSGLEVEL,                        TR_MSG_ERR);
+     tr_bencDictAddInt (d, TR_PREFS_KEY_DOWNLOAD_QUEUE_SIZE,             5);
+     tr_bencDictAddBool (d, TR_PREFS_KEY_DOWNLOAD_QUEUE_ENABLED,          true);
+     tr_bencDictAddInt (d, TR_PREFS_KEY_PEER_LIMIT_GLOBAL,               atoi (TR_DEFAULT_PEER_LIMIT_GLOBAL_STR));
+@@ -338,8 +338,8 @@
+     tr_bencDictAddBool (d, TR_PREFS_KEY_PREFETCH_ENABLED,                DEFAULT_PREFETCH_ENABLED);
+     tr_bencDictAddBool (d, TR_PREFS_KEY_QUEUE_STALLED_ENABLED,           true);
+     tr_bencDictAddInt (d, TR_PREFS_KEY_QUEUE_STALLED_MINUTES,           30);
+-    tr_bencDictAddReal (d, TR_PREFS_KEY_RATIO,                           2.0);
+-    tr_bencDictAddBool (d, TR_PREFS_KEY_RATIO_ENABLED,                   false);
++    tr_bencDictAddReal (d, TR_PREFS_KEY_RATIO,                           0.0);
++    tr_bencDictAddBool (d, TR_PREFS_KEY_RATIO_ENABLED,                   true);
+     tr_bencDictAddBool (d, TR_PREFS_KEY_RENAME_PARTIAL_FILES,            true);
+     tr_bencDictAddBool (d, TR_PREFS_KEY_RPC_AUTH_REQUIRED,               false);
+     tr_bencDictAddStr (d, TR_PREFS_KEY_RPC_BIND_ADDRESS,                "0.0.0.0");
+diff -Nur transmission-2.76.old/libtransmission/utils.c transmission-2.76/libtransmission/utils.c
+--- transmission-2.76.old/libtransmission/utils.c	2013-01-09 09:30:25.318135703 +0800
++++ transmission-2.76/libtransmission/utils.c	2013-01-09 13:09:15.038451160 +0800
+@@ -1745,7 +1745,7 @@
+         precision = 2;
+     else
+         precision = 1;
+-    tr_snprintf (buf, buflen, "%.*f %s", precision, value, units);
++    tr_snprintf (buf, buflen, "%.*f%s", precision, value, units);
+     return buf;
+ }
+ 

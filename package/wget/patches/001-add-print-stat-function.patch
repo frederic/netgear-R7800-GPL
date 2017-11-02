@@ -1,0 +1,218 @@
+diff -Nur wget-1.13.4.old/src/ftp.c wget-1.13.4/src/ftp.c
+--- wget-1.13.4.old/src/ftp.c	2012-05-23 12:27:31.238505252 -0400
++++ wget-1.13.4/src/ftp.c	2012-05-23 12:28:01.298505260 -0400
+@@ -1246,13 +1246,16 @@
+   else
+     fp = output_stream;
+ 
++  wgint tolen;  
+   if (passed_expected_bytes)
+     {
+       print_length (passed_expected_bytes, restval, true);
++      tolen = passed_expected_bytes;
+       expected_bytes = passed_expected_bytes;
+         /* for fd_read_body's progress bar */
+     }
+   else if (expected_bytes)
++    tolen = expected_bytes;
+     print_length (expected_bytes, restval, false);
+ 
+   /* Get the contents of the document.  */
+@@ -1413,6 +1416,7 @@
+         locf = opt.output_document;
+     }
+ 
++   print_stat("(CONNECTING)");
+   /* If the output_document was given, then this check was already done and
+      the file didn't exist. Hence the !opt.output_document */
+   if (opt.noclobber && !opt.output_document && file_exists_p (con->target))
+@@ -1510,6 +1514,7 @@
+         case FTPNSFOD: case FTPLOGINC: case FTPNOPASV: case CONTNOTSUPPORTED:
+         case UNLINKERR:
+           /* Fatal errors, give up.  */
++	  print_stat("(ERROR)");
+           return err;
+         case CONSOCKERR: case CONERROR: case FTPSRVERR: case FTPRERR:
+         case WRITEFAILED: case FTPUNKNOWNTYPE: case FTPSYSERR:
+@@ -1539,6 +1544,7 @@
+           break;
+         default:
+           /* Not as great.  */
++	  print_stat("(ERROR)");
+           abort ();
+         }
+       tms = datetime_str (time (NULL));
+@@ -1565,6 +1571,7 @@
+                      tms, tmrate,
+                      write_to_stdout ? "" : quote (locf),
+                      number_to_static_string (qtyread));
++	 print_stat("(COMPLETED %s)",tmrate);
+         }
+       if (!opt.verbose && !opt.quiet)
+         {
+diff -Nur wget-1.13.4.old/src/http.c wget-1.13.4/src/http.c
+--- wget-1.13.4.old/src/http.c	2012-05-23 12:27:31.248505252 -0400
++++ wget-1.13.4/src/http.c	2012-05-23 12:28:01.298505260 -0400
+@@ -2625,7 +2625,8 @@
+   bool send_head_first = true;
+   char *file_name;
+   bool force_full_retrieve = false;
+-
++  
++  print_stat("(CONNECTING)");
+   /* Assert that no value for *LOCAL_FILE was passed. */
+   assert (local_file == NULL || *local_file == NULL);
+ 
+@@ -2830,6 +2831,7 @@
+           /* Deal with you later.  */
+           break;
+         default:
++	  print_stat("(ERROR)");
+           /* All possibilities should have been exhausted.  */
+           abort ();
+         }
+@@ -3046,6 +3048,7 @@
+                          number_to_static_string (hstat.len),
+                          number_to_static_string (hstat.contlen),
+                          hstat.local_file, count);
++	      print_stat("(COMPLETED %s)",tmrate);
+             }
+           ++numurls;
+           total_downloaded_bytes += hstat.rd_size;
+@@ -3145,7 +3148,8 @@
+   if (ret == RETROK && local_file)
+     *local_file = xstrdup (hstat.local_file);
+   free_hstat (&hstat);
+-
++  if (ret != RETROK)
++	print_stat("(ERROR)");
+   return ret;
+ }
+ 
+diff -Nur wget-1.13.4.old/src/main.c wget-1.13.4/src/main.c
+--- wget-1.13.4.old/src/main.c	2012-05-23 12:27:31.238505252 -0400
++++ wget-1.13.4/src/main.c	2012-05-23 12:28:01.298505260 -0400
+@@ -79,6 +79,37 @@
+ 
+ struct options opt;
+ 
++#include <fcntl.h>
++#include <stdarg.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
++char statfile[32];
++int stat_fd = -1;
++void print_stat(char * stat,...)
++{
++	va_list ap;
++	char buf[128];
++	int fd,nwrite;
++	if(stat_fd == -1){
++		if((fd = open(statfile,O_WRONLY|O_NONBLOCK))< 0){
++			printf("open error\n");
++			return;
++		}
++		stat_fd = fd;
++	}
++	va_start(ap,stat);
++	vsprintf(buf,stat,ap);
++	va_end(ap);
++
++	if((nwrite = write(stat_fd,buf,strlen(buf)))<0){
++		if(errno == EAGAIN){
++			printf("fifo has not been read yeat\n");
++		}
++	}
++}
++
++
+ /* defined in version.c */
+ extern char *version_string;
+ extern char *compilation_string;
+@@ -239,6 +270,7 @@
+     { "parent", 0, OPT__PARENT, NULL, optional_argument },
+     { "passive-ftp", 0, OPT_BOOLEAN, "passiveftp", -1 },
+     { "password", 0, OPT_VALUE, "password", -1 },
++    { "statfile", 0, OPT_VALUE, "statfile", -1 },
+     { "post-data", 0, OPT_VALUE, "postdata", -1 },
+     { "post-file", 0, OPT_VALUE, "postfile", -1 },
+     { "prefer-family", 0, OPT_VALUE, "preferfamily", -1 },
+@@ -517,6 +549,8 @@
+                                  one of IPv6, IPv4, or none.\n"),
+ #endif
+     N_("\
++       --statfile=PATH           set both ftp and http status file path.\n"),
++    N_("\
+        --user=USER               set both ftp and http user to USER.\n"),
+     N_("\
+        --password=PASS           set both ftp and http password to PASS.\n"),
+@@ -1010,6 +1044,11 @@
+       switch (opt->type)
+         {
+         case OPT_VALUE:
++	  if(strcmp(opt->data,"statfile") == 0)
++	  {
++		strcpy(statfile,optarg);
++		break;
++	  }	
+           setoptval (opt->data, optarg, opt->long_name);
+           break;
+         case OPT_BOOLEAN:
+@@ -1242,6 +1281,9 @@
+   if (opt.background)
+     fork_to_background ();
+ #endif
++  char cmd[32];
++  sprintf(cmd,"echo '%d' > %s-pid",getpid(),statfile);
++  system(cmd);
+ 
+   /* Initialize progress.  Have to do this after the options are
+      processed so we know where the log file is.  */
+diff -Nur wget-1.13.4.old/src/progress.c wget-1.13.4/src/progress.c
+--- wget-1.13.4.old/src/progress.c	2012-05-23 12:27:31.248505252 -0400
++++ wget-1.13.4/src/progress.c	2012-05-23 12:28:01.298505260 -0400
+@@ -275,6 +275,7 @@
+ {
+   const wgint ROW_BYTES = opt.dot_bytes * opt.dots_in_line;
+ 
++  int dl_per = 0;
+   /* bytes_displayed is the number of bytes indicated to the user by
+      dots printed so far, includes the initially "skipped" amount */
+   wgint bytes_displayed = dp->rows * ROW_BYTES + dp->dots * opt.dot_bytes;
+@@ -289,6 +290,7 @@
+          been retrieved.  12.8% will round to 12% because the 13% mark
+          has not yet been reached.  100% is only shown when done.  */
+       int percentage = 100.0 * bytes_displayed / dp->total_length;
++      dl_per = percentage;
+       logprintf (LOG_VERBOSE, "%3d%%", percentage);
+     }
+ 
+@@ -310,6 +312,7 @@
+                rate >= 99.95 ? 0 : rate >= 9.995 ? 1 : 2,
+                rate, names[units]);
+     dp->last_timer_value = dltime;
++    print_stat("(DOWNLOADING %s %4.*f%c %d%%)",number_to_static_string(dp->total_length),rate >= 99.95 ? 0 : rate >= 9.995 ? 1 : 2,rate, names[units],dl_per);
+   }
+ 
+   if (!last)
+@@ -329,6 +332,7 @@
+     }
+   else
+     {
++      //print_stat("(COMPLETED)");
+       /* When done, print the total download time */
+       if (dltime >= 10)
+         logprintf (LOG_VERBOSE, "=%s",
+diff -Nur wget-1.13.4.old/src/wget.h wget-1.13.4/src/wget.h
+--- wget-1.13.4.old/src/wget.h	2012-05-23 12:27:31.238505252 -0400
++++ wget-1.13.4/src/wget.h	2012-05-23 12:28:01.298505260 -0400
+@@ -314,6 +314,8 @@
+    0-pad the address.)  */
+ #define PTR_FORMAT(p) (int) (2 * sizeof (void *)), (unsigned long) (p)
+ 
++extern char statfile[];
++extern void print_stat(char * stat,...);
+ extern const char *exec_name;
+ 
+ /* Document type ("dt") flags */

@@ -1,0 +1,12 @@
+diff -Nur e2fsprogs-1.41.12/e2fsck/util.c e2fsprogs-1.41.12.new/e2fsck/util.c
+--- e2fsprogs-1.41.12/e2fsck/util.c	2010-05-13 18:59:49.000000000 -0400
++++ e2fsprogs-1.41.12.new/e2fsck/util.c	2011-12-22 08:03:38.929644146 -0500
+@@ -43,6 +43,8 @@
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ 
++#undef HAVE_MALLINFO
++
+ void fatal_error(e2fsck_t ctx, const char *msg)
+ {
+ 	if (msg)

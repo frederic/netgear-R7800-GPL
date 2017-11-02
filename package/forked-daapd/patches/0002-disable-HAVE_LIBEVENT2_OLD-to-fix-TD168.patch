@@ -1,0 +1,14 @@
+diff -ruN a/src/httpd.c b/src/httpd.c
+--- a/src/httpd.c	2015-06-19 12:25:36.633598604 -0400
++++ b/src/httpd.c	2015-06-19 14:21:01.153597771 -0400
+@@ -122,6 +122,10 @@
+ static struct evhttp *evhttpd;
+ static pthread_t tid_httpd;
+ 
++#ifdef DNI_SUPPORT_LIBEVENT2
++#undef HAVE_LIBEVENT2_OLD
++#endif
++
+ #ifdef HAVE_LIBEVENT2_OLD
+ struct stream_ctx *g_st;
+ #endif

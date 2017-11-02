@@ -1,0 +1,61 @@
+diff -Naur jpeg-6b.orig/configure jpeg-6b/configure
+--- jpeg-6b.orig/configure	2009-07-15 11:44:30.000000000 +0800
++++ jpeg-6b/configure	2009-07-15 13:49:53.000000000 +0800
+@@ -1477,6 +1477,8 @@
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
++test -z "$INSTALL_DIR" && INSTALL_DIR='${INSTALL} -d'
++
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+@@ -1776,6 +1778,7 @@
+ s%@CC@%$CC%g
+ s%@CPP@%$CPP%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++s%@INSTALL_DIR@%$INSTALL_DIR%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@RANLIB@%$RANLIB%g
+ s%@LIBTOOL@%$LIBTOOL%g
+diff -Naur jpeg-6b.orig/makefile.cfg jpeg-6b/makefile.cfg
+--- jpeg-6b.orig/makefile.cfg	2009-07-15 11:44:30.000000000 +0800
++++ jpeg-6b/makefile.cfg	2009-07-15 13:43:46.000000000 +0800
+@@ -10,7 +10,7 @@
+ 
+ # Where to install the programs and man pages.
+ prefix = @prefix@
+-exec_prefix = @exec_prefix@
++exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+ includedir = $(prefix)/include
+@@ -65,6 +65,7 @@
+ AR2= @RANLIB@
+ # installation program
+ INSTALL= @INSTALL@
++INSTALL_DIR= @INSTALL_DIR@
+ INSTALL_PROGRAM= @INSTALL_PROGRAM@
+ INSTALL_LIB= @INSTALL_LIB@
+ INSTALL_DATA= @INSTALL_DATA@
+@@ -191,6 +192,8 @@
+ # Installation rules:
+ 
+ install: cjpeg djpeg jpegtran rdjpgcom wrjpgcom @FORCE_INSTALL_LIB@
++	$(INSTALL_DIR) $(bindir)
++	$(INSTALL_DIR) $(mandir)
+ 	$(INSTALL_PROGRAM) cjpeg $(bindir)/$(binprefix)cjpeg
+ 	$(INSTALL_PROGRAM) djpeg $(bindir)/$(binprefix)djpeg
+ 	$(INSTALL_PROGRAM) jpegtran $(bindir)/$(binprefix)jpegtran
+@@ -203,9 +206,11 @@
+ 	$(INSTALL_DATA) $(srcdir)/wrjpgcom.1 $(mandir)/$(manprefix)wrjpgcom.$(manext)
+ 
+ install-lib: libjpeg.$(A) install-headers
++	$(INSTALL_DIR) $(libdir)
+ 	$(INSTALL_LIB) libjpeg.$(A) $(libdir)/$(binprefix)libjpeg.$(A)
+ 
+ install-headers: jconfig.h
++	$(INSTALL_DIR) $(includedir)
+ 	$(INSTALL_DATA) jconfig.h $(includedir)/jconfig.h
+ 	$(INSTALL_DATA) $(srcdir)/jpeglib.h $(includedir)/jpeglib.h
+ 	$(INSTALL_DATA) $(srcdir)/jmorecfg.h $(includedir)/jmorecfg.h

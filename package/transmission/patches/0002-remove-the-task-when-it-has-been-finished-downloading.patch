@@ -1,0 +1,24 @@
+diff -Nur transmission-2.76.old/daemon/remote.c transmission-2.76/daemon/remote.c
+--- transmission-2.76.old/daemon/remote.c	2013-01-16 17:04:42.225327992 +0800
++++ transmission-2.76/daemon/remote.c	2013-01-17 09:14:57.578454093 +0800
+@@ -814,8 +814,7 @@
+             break;
+         }
+ 
+-        case TR_STATUS_DOWNLOAD:
+-        case TR_STATUS_SEED: {
++        case TR_STATUS_DOWNLOAD: {
+             int64_t fromUs = 0;
+             int64_t toUs = 0;
+             tr_bencDictFindInt (t, "peersGettingFromUs", &fromUs);
+@@ -841,6 +840,10 @@
+             }
+             break;
+         }
++        case TR_STATUS_SEED: {
++                tr_strlcpy( buf, "Complete", buflen );
++                break;
++        }
+ 
+         default:
+             tr_strlcpy (buf, "Unknown", buflen);

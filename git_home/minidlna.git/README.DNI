@@ -1,0 +1,57 @@
+===How this git repository come
+
+# in itgserver, download cvsroot of minidlna from minidlna.cvs.sourceforge.net
+# convert minidlna cvsroot to git repository and copy it to dniserver /tmp/minidlna-cvs-to-git
+
+mkdir /tmp/minidlna-cvs-to-git
+cd /tmp/minidlna-cvs-to-git
+rsync -av rsync://minidlna.cvs.sourceforge.net/cvsroot/minidlna/ minidlna-cvsroot
+chmod u+w -R minidlna-cvsroot/minidlna
+git-cvsimport -k -v -p x -o cvshead -d /tmp/minidlna-cvs-to-git/minidlna-cvsroot -C cvs-minidlna.git minidlna
+
+
+# in dniserver, copy old minidlna repository from /usr/local/dni-git/common/apps/minidlna.git
+# clone a new minidlna git repository from cvs-minidlna.git, do it in dniserver
+# fetch the all of the branch from dni-old-minidlna.git to minidlna.git
+
+cd /tmp/minidlna-cvs-to-git
+cp /usr/local/dni-git/common/apps/minidlna.git dni-old-minidlna.git -r
+git-clone /tmp/minidlna-cvs-to-git/cvs-minidlna.git minidlna.git
+cd minidlna.git
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ gnh-br-oom-test:gnh-br-oom-test
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ master:dni-master
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ minidlna-gnh-br:minidlna-gnh-br
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ minidlna-gnh-br-ctt:minidlna-gnh-br-ctt
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ minidlna-wndr3700-br:minidlna-wndr3700-br
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ wndr3700-br-lock-up-test:wndr3700-br-lock-up-test
+git-fetch /tmp/minidlna-cvs-to-git/dni-old-minidlna.git/ wndr3700-dlna-cert:wndr3700-dlna-cert
+
+# in dniserver, remove old minidlna repository and replace with new minidlna.git
+rm dniserver/usr/local/dni-git/common/apps/minidlna.git
+cp /tmp/minidlna-cvs-to-git/minidlna.git dniserver/usr/local/dni-git/common/apps/minidlna.git
+
+===How to merge minidlna.cvs.sourceforge.net new code to this git repository
+
+# in itgserver, download cvsroot of minidlna from minidlna.cvs.sourceforge.net
+# convert minidlna cvsroot to git repository and copy it to dniserver /tmp/minidlna-cvs-to-git
+mkdir /tmp/minidlna-cvs-to-git
+cd /tmp/minidlna-cvs-to-git
+rsync -av rsync://minidlna.cvs.sourceforge.net/cvsroot/minidlna/ minidlna-cvsroot
+chmod u+w -R minidlna-cvsroot/minidlna
+git-cvsimport -k -v -p x -o cvshead -d /tmp/minidlna-cvs-to-git/minidlna-cvsroot -C cvs-minidlna.git minidlna
+
+# in dniserver, execute "git pull"
+cd dniserver/usr/local/dni-git/common/apps/minidlna.git
+git-checkout master
+git pull
+
+===How branch minidnla-netgear-br come
+
+It is created basing on branch master commit id 05d34afc730896d9e9c1ca76c49e654263a0d52f,
+and apply some necessary patch from branch wndr3700-dlna-cert
+
+===How to merge minidlna.cvs.sourceforge.net new code to branch minidnla-netgear-br
+
+First, merge minidlna.cvs.sourceforge.net new code to this git repository.
+Second, git-checkout minidnla-netgear-br; git-merge master
+Third, git tag minidnla-netgear-tagxxx -m "This tag marks we merge minidlna.cvs.sourceforge.net commit id <commit id of HEAD of branch master> at year-month-day"

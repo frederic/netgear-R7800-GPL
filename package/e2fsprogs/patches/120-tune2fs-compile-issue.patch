@@ -1,0 +1,21 @@
+diff -Nur e2fsprogs-1.42-old//misc/tune2fs.c e2fsprogs-1.42/misc/tune2fs.c
+--- e2fsprogs-1.42-old//misc/tune2fs.c	2011-11-14 10:58:28.000000000 -0500
++++ e2fsprogs-1.42/misc/tune2fs.c	2012-08-07 07:02:02.666626197 -0400
+@@ -25,6 +25,7 @@
+  * 94/03/06	- Added the checks interval from Uwe Ohse (uwe@tirka.gun.de)
+  */
+ 
++#include <stdlib.h>
+ #define _XOPEN_SOURCE 600 /* for inclusion of strptime() */
+ #define _BSD_SOURCE /* for inclusion of strcasecmp() */
+ #include "config.h"
+@@ -38,9 +39,6 @@
+ #endif
+ #include <pwd.h>
+ #include <stdio.h>
+-#ifdef HAVE_STDLIB_H
+-#include <stdlib.h>
+-#endif
+ #include <string.h>
+ #include <time.h>
+ #include <unistd.h>

@@ -1,0 +1,13 @@
+diff -Nur wget-1.13.4.old/src/progress.c wget-1.13.4/src/progress.c
+--- wget-1.13.4.old/src/progress.c	2013-01-23 14:47:10.055328375 +0800
++++ wget-1.13.4/src/progress.c	2013-01-23 14:48:55.637826490 +0800
+@@ -312,7 +312,8 @@
+                rate >= 99.95 ? 0 : rate >= 9.995 ? 1 : 2,
+                rate, names[units]);
+     dp->last_timer_value = dltime;
+-    print_stat("(DOWNLOADING %s %4.*f%c %d%%)",number_to_static_string(dp->total_length),rate >= 99.95 ? 0 : rate >= 9.995 ? 1 : 2,rate, names[units],dl_per);
++    if(((dp->rows)%4) == 0)
++    	print_stat("(DOWNLOADING %s %4.*f%c %d%%)",number_to_static_string(dp->total_length),rate >= 99.95 ? 0 : rate >= 9.995 ? 1 : 2,rate, names[units],dl_per);
+   }
+ 
+   if (!last)

@@ -1,0 +1,53 @@
+diff -ruN a/http.c b/http.c
+--- a/http.c	2015-06-19 12:35:47.723598531 -0400
++++ b/http.c	2015-06-19 14:17:07.153597807 -0400
+@@ -2476,6 +2476,33 @@
+ }
+ 
+ void
++evhttp_send_reply_chunk_with_cb(struct evhttp_request *req, struct evbuffer *databuf,
++    void (*cb)(struct evhttp_connection *, void *), void *arg)
++{
++	struct evhttp_connection *evcon = req->evcon;
++	struct evbuffer *output;
++
++	if (evcon == NULL)
++		return;
++
++	output = bufferevent_get_output(evcon->bufev);
++
++	if (evbuffer_get_length(databuf) == 0)
++		return;
++	if (!evhttp_response_needs_body(req))
++		return;
++	if (req->chunked) {
++		evbuffer_add_printf(output, "%x\r\n",
++				    (unsigned)evbuffer_get_length(databuf));
++	}
++	evbuffer_add_buffer(output, databuf);
++	if (req->chunked) {
++		evbuffer_add(output, "\r\n", 2);
++	}
++	evhttp_write_buffer(evcon, cb, arg);
++}
++
++void
+ evhttp_send_reply_end(struct evhttp_request *req)
+ {
+ 	struct evhttp_connection *evcon = req->evcon;
+diff -ruN a/include/event2/http.h b/include/event2/http.h
+--- a/include/event2/http.h	2015-06-19 12:35:47.733598531 -0400
++++ b/include/event2/http.h	2015-06-19 14:16:47.243597806 -0400
+@@ -429,6 +429,12 @@
+ 	const char *address, unsigned short port);
+ 
+ /**
++   base function evhttp_send_reply_start, call evhttp_write_buffer to
++   set write callback function and callback args.
++*/
++void evhttp_send_reply_chunk_with_cb(struct evhttp_request *req, struct evbuffer *databuf,
++    void (*cb)(struct evhttp_connection *, void *), void *arg);
++/**
+  * Return the bufferevent that an evhttp_connection is using.
+  */
+ struct bufferevent *evhttp_connection_get_bufferevent(

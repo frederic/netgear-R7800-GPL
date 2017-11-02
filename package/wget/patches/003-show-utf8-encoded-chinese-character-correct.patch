@@ -1,0 +1,15 @@
+diff -Nur wget-1.13.4.org/src/url.c wget-1.13.4/src/url.c
+--- wget-1.13.4.org/src/url.c	2011-01-01 20:12:35.000000000 +0800
++++ wget-1.13.4/src/url.c	2013-01-17 11:55:10.308451064 +0800
+@@ -1298,8 +1298,9 @@
+ };
+ 
+ #define FILE_CHAR_TEST(c, mask) \
+-    ((opt.restrict_files_nonascii && !c_isascii ((unsigned char)(c))) || \
+-    (filechr_table[(unsigned char)(c)] & (mask)))
++    (((opt.restrict_files_nonascii && !c_isascii ((unsigned char)(c))) || \
++    (filechr_table[(unsigned char)(c)] & (mask)))\
++    && !((c|0x0fffffff) == 0xffffffff)) /*do not change the chinese character*/
+ 
+ /* Shorthands for the table: */
+ #define U filechr_not_unix
