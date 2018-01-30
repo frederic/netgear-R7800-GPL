@@ -5,7 +5,7 @@
 include $(NETCGI_CONF)
 
 FILES = main.o httpd.o lang.o apply.o asp.o auth.o action.o print.o
-FILES += upgrade.o util.o detwan.o ftp.o resolv.o unicode.o
+FILES += upgrade.o util.o detwan.o ftp.o resolv.o unicode.o curl.o
 FILES += wireless.o
 FILES += basic_home_asp.o menu_asp.o adv_index_asp.o
 FILES += sw_soap.o sw_devconfig.o sw_devinfo.o sw_wanip.o \
@@ -23,7 +23,7 @@ FILES += detfirmware.o schedule_apply.o email_apply.o dns_asp.o dns_apply.o
 FILES += logs_apply.o logs_asp.o remote_apply.o attached_devices_asp.o passwd_apply.o
 FILES += static_route_apply.o static_route_asp.o upnp_asp.o wireless_repeating_asp.o
 FILES += wladv_asp.o wps_asp.o top_asp.o upgrade_asp.o lang_upgrade.o email_asp.o ssid_passph_to_sec.o
-FILES += dni_system.o
+FILES += dni_system.o dni_util.o
 FILES += rae_apply.o rae_asp.o
 FILES += vpn_apply.o vpn_asp.o
 FILES += wless_schedule_apply.o wless_schedule_asp.o wless_schedule_action.o
@@ -60,7 +60,6 @@ CFLAGS += -DNTPST_POSTION=$(NTPST_POSTION)
 CFLAGS += -DSTAMAC_POSTION=$(STAMAC_POSTION)
 CFLAGS += -DPOT_MTD=$(POT_MTD)
 CFLAGS += -DMAX_POST_SIZE=$(MAX_POST_SIZE)
-CFLAGS += -DREADYCLOUD=$(READYCLOUD)
 CFLAGS += -DGENIECLOUD=$(GENIECLOUD)
 CFLAGS += -DAP_MODE_DETECTION=$(AP_MODE_DETECTION)
 CFLAGS += -DGUEST_MANAGE=$(GUEST_MANAGE)
@@ -76,6 +75,11 @@ CFLAGS += -DHAVE_OPENVPN=$(HAVE_OPENVPN)
 CFLAGS += -DHAVE_BT_IGMP=$(HAVE_BT_IGMP)
 CFLAGS += -DENABLE_VLAN_PPPOE_SUPPORT=$(ENABLE_VLAN_PPPOE_SUPPORT)
 CFLAGS += -DDFS_RADAR_DETECT=$(DFS_RADAR_DETECT)
+
+ifeq ($(READYCLOUD), 1)
+FILES += readycloud_apply.o readycloud_asp.o
+CFLAGS += -DREADYCLOUD
+endif
 
 ifeq ($(SUPER_WIFI), 1)
 CFLAGS += -DSUPER_WIFI
@@ -467,6 +471,9 @@ endif
 ifeq ($(APP_SYSTEM), 1)
 FILES += sw_app.o
 endif
+ifeq ($(SOAP_SECURITY), 1)
+CFLAGS += -DSOAP_SECURITY
+endif
 
 CFLAGS += -DUSE_MTD_UTIL=$(USE_MTD_UTIL)
 CFLAGS += -DADV_COEXISTENCE=$(ADV_COEXISTENCE)
@@ -485,19 +492,19 @@ LDFLAGS += -L$(STAGING_DIR)/usr/lib/libiconv/lib
 all : net-cgi usb_cfg inetd detplc remote_smb_conf remote_user_conf remote_share_conf readycloud_unregister
 
 net-cgi : $(FILES)
-	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig -lpthread -liconv
+	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig -lpthread -liconv -lcurl
 	@echo "make $@ finished on `date`"
 
-usb_cfg : usbdisk.o usb_cfg.o print.o
+usb_cfg : usbdisk.o usb_cfg.o print.o dni_util.o
 	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig -liconv	
 
-inetd : http_scan.o
+inetd : http_scan.o dni_util.o
 	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS)
 
-remote_smb_conf remote_user_conf remote_share_conf readycloud_unregister: usbdisk.o remote_smb_conf.o print.o
+remote_smb_conf remote_user_conf remote_share_conf readycloud_unregister: usbdisk.o remote_smb_conf.o print.o dni_util.o
 	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig -liconv
 
-detplc: plc_devs_detect.o
+detplc: plc_devs_detect.o dni_util.o
 	$(CC) $(CFLAGS) $^ -o $@ $(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig
 
 %.o : %.c

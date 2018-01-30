@@ -184,7 +184,7 @@ bh_connect_success_1="Connessione a Internet eseguita correttamente."
 
 bh_connect_success_2="Questo router è preimpostato con il seguente SSID (nome rete wireless) e "
 
-bh_network_key="chiave di rete (password) univoci"
+bh_network_key="chiave di rete (password) univoci."
 
 bh_rollover_help_text="Il router è preimpostato con la sicurezza wireless WPA2-PSK per proteggere la rete dagli accessi indesiderati. Per accedere alla rete wireless, è necessario inserire la chiave di rete (password). Queste impostazioni predefinite sono univoche del dispositivo, come un numero di serie.  Per modificarle, è possibile accedere in un secondo momento alla schermata Impostazioni wireless nell'interfaccia grafica Web del router."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Nome rete wireless (SSID)"
 
 bh_wireless="Wireless"
 
-bh_wpa_wpa2_passpharse="Chiave di rete (Password)"
+bh_wpa_wpa2_passpharse="Chiave di rete (Password):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Aggiornamento importante"
 bh_wanlan_conflict_info="Per evitare un conflitto con l'ISP, l'indirizzo IP del router è stato aggiornato in "
 bh_continue_mark="Continua"
 bh_same_server_wan_ip="L'indirizzo IP non deve coincidere con l'indirizzo server!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD consente di accedere in modalità remota tramite Internet a un dispositivo di archiviazione USB collegato alla porta USB del router. Per utilizzare ReadyCLOUD, è necessario disporre di un account ReadyCLOUD. Se non si dispone di un account ReadyCLOUD, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">fare clic qui</a>, quindi fare clic su <b>Accedi > Crea account</b>. </p><p><b>Configurazione di ReadyCLOUD</b></p><p><ol><li>Collegare un dispositivo di archiviazione USB alla porta USB del router.</li><li>Immettere il proprio nome utente e la password ReadyCLOUD nei campi sottostanti e fare clic sul pulsante <b>Registra</b>. A questo punto, il router e il dispositivo USB vengono registrati su ReadyCLOUD.</li><li> Visitare il sito <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, fare clic su Accedi, immettere il proprio nome utente e password ReadyCLOUD, quindi fare clic sul pulsante <b>Accedi</b>.</li></ol></p><p>      È inoltre possibile utilizzare l'app ReadyCLOUD per stabilire una connessione sicura tra il computer o dispositivo mobile e il dispositivo di archiviazione USB del router.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Fare clic qui</a> per scaricare l'app ReadyCLOUD.</p>"
-ready_share_info1="La funzionalità ReadySHARE Cloud consente di accedere tin modalità remota a un dispositivo di archiviazione USB collegato alla porta USB del router."
-how_setup_ready_share="Configurazione di ReadySHARE Cloud"
-ready_share_step1="Fase 1: è necessario un account ReadySHARE Cloud. Se non si dispone dell'account,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>fare clic qui</a> per crearne uno."
-ready_share_step2="Fase 2: su questa pagina, immettere il nome utente e la password ReadySHARE Cloud per registrare il router e il dispositivo USB ad esso collegato tramite l'account."
-ready_share_step3="Fase 3: eseguire nuovamente l'accesso a <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> con il proprio account. Dovrebbe essere visualizzato il dispositivo USB collegato al router."
-ready_share_set_note="<b>Nota:</b> senza il client, è possibile soltanto visualizzare i contenuti del dispositivo USB e non è possibile aprire o modificare i file."
-ready_share_start="Registra il router e il dispositivo USB con ReadyCLOUD"
-ready_share_get_account="Se non si dispone di un account ReadyCLOUD <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>fare clic qui</a> per ottenerne uno"
-username="Nome utente"
-key_passphrase="Password"
-register="Registra"
-register_note="<b>Nota:</b> il router mantiene la connessione in modo continuativo a ReadyCLOUD fino a quando non si annulla la registrazione."
-help_center="Centro assistenza"
-help_show_hide="Mostra/Nascondi centro assistenza"
-
-resister_user="Il router è registrato con il seguente utente ReadyCLOUD:"
-access_storage_method="Ora è possibile accedere a<a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> con l'account ReadyCLOUD per accedere al dispositivo USB da qualunque postazione."
-unregister_info="Fare clic su <B>Annulla registrazione</B> per registrare il router con un account ReadyCLOUD diverso"
-unregister="Annulla registrazione"
-
-result_register_ok="Registrazione completata"
-result_register_fail="La registrazione non è riuscita. Controllare il nome utente e la password e riprovare."
-result_unreg_ok="Annullamento registrazione completato"
-result_unreg_fail="Annullamento registrazione non riuscito"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Il nuovo router NETGEAR sta per essere impostato nella modalità
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Le impostazioni wireless del router sono state modificate. Utilizzare i seguenti nomi di rete wireless (SSID) e la chiave di rete (password) per ricollegare il dispositivo al router, quindi fare clic sul pulsante <b>Fine</b> per completare l'installazione."
 bh_wl_ssid_name="Nome di rete wireless (SSID) da 2,4 GHz: "
-bh_wl_password="Chiave di rete wireless (password)"
+bh_wl_password="Chiave di rete wireless (password):"
 bh_wl_password_2="Password di rete wireless (chiave di rete) da 2,4 GHz: "
 bh_wla_ssid_name="Nome di rete wireless (SSID) da 5GHz: "
 bh_wla_password_2="Password di rete wireless (chiave di rete) da 5GHz: "
@@ -633,3 +605,4 @@ bh_router_admin="Impostazioni amministratore router:"
 bh_admin_user_name="Nome utente amministratore:"
 bh_new_admin_passwd="Nuova password amministratore:"
 bh_passwd_not_blank="È necessario specificare la password."
+finish_mark="Fine"

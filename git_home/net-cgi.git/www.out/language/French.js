@@ -196,7 +196,7 @@ bh_wirless_name="Nom du réseau sans fil (SSID)"
 
 bh_wireless="Sans fil"
 
-bh_wpa_wpa2_passpharse="Clé réseau (mot de passe)"
+bh_wpa_wpa2_passpharse="Clé réseau (mot de passe):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Mise à jour importante"
 bh_wanlan_conflict_info="Pour éviter tout conflit avec votre fournisseur d'accès à Internet, l'adresse IP de votre routeur est désormais "
 bh_continue_mark="Continuer"
 bh_same_server_wan_ip="Mon adresse IP doit être différente de l'adresse du serveur !"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD vous permet d'accéder à distance, via Internet, à un périphérique de stockage USB connecté au port USB de votre routeur. Pour utiliser ReadyCLOUD, vous devez disposer d'un compte ReadyCLOUD. Si vous n'en avez pas,<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">cliquez ici</a>, puis sur <b>Se connecter > Créer un compte</b>. </p><p><b>Pour configurer ReadyCLOUD</b></p><p><ol><li>Connectez un périphérique de stockage USB au port USB de votre routeur.</li><li>Saisissez votre nom d'utilisateur et votre mot de passe ReadyCLOUD dans les champs ci-dessous, puis cliquez sur le bouton <b>Enregistrement</b>. Votre routeur et le périphérique USB sont enregistrés sur ReadyCLOUD.</li><li> Visitez la page <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, cliquez sur Se connecter, saisissez votre nom d'utilisateur et votre mot de passe ReadyCLOUD, puis cliquez sur le bouton <b>Se connecter</b>.</li></ol></p><p>      Vous pouvez également utiliser l'application ReadyCLOUD pour établir une connexion sécurisée entre votre ordinateur ou votre appareil mobile et le périphérique de stockage USB du routeur.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Cliquez ici</a> pour télécharger l'application ReadyCLOUD.</p>"
-ready_share_info1="La fonction ReadySHARE Cloud permet d'accéder à distance via Internet à un périphérique de stockage USB connecté au port USB de votre routeur."
-how_setup_ready_share="Configuration de ReadySHARE Cloud"
-ready_share_step1="Etape 1 : vous devez disposer d'un compte ReadySHARE. Si vous n'en possédez pas, <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>cliquez ici</a> pour en créer un."
-ready_share_step2="Etape 2 : sur cette page, saisissez vos nom d'utilisateur et mot de passe ReadySHARE Cloud pour enregistrer votre routeur et le périphérique USB connecté à celui-ci sur votre compte."
-ready_share_step3="Etape 3 : connectez-vous à nouveau à l'adresse <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> avec votre compte. Le périphérique USB connecté à votre routeur doit s'afficher."
-ready_share_set_note="<b>Remarque :</b> sans ce client, vous serez en mesure de visualiser le contenu de votre périphérique USB, mais vous ne pourrez ni ouvrir ni modifier les fichiers."
-ready_share_start="Enregistrez votre routeur et votre périphérique USB avec ReadyCLOUD"
-ready_share_get_account="Si vous ne disposez pas de compte ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>cliquez ici</a> pour en créer un"
-username="Nom d'utilisateur"
-key_passphrase="Mot de passe"
-register="Enregistrer"
-register_note="<b>Remarque :</b> votre routeur maintient une connexion en continu avec ReadyCLOUD jusqu'à ce que vous annuliez l'enregistrement."
-help_center="Centre d'aide"
-help_show_hide="Afficher/masquer le centre d'aide"
-
-resister_user="Ce routeur est enregistré avec l'utilisateur ReadyCLOUD suivant :"
-access_storage_method="Vous pouvez maintenant vous connecter à<a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> avec votre compte ReadyCLOUD pour accéder à votre périphérique USB où que vous soyez."
-unregister_info="Cliquez sur<B> Annuler l'enregistrement </B>pour enregistrer ce routeur avec un autre compte ReadyCLOUD"
-unregister="Annuler l'enregistrement"
-
-result_register_ok="Enregistrement terminé."
-result_register_fail="Echec de votre inscription. Saisissez à nouveau votre nom d'utilisateur ou mot de passe et réessayez."
-result_unreg_ok="Annulation de l'enregistrement terminée."
-result_unreg_fail="Echec de l'annulation de l'enregistrement."
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Votre nouveau routeur NETGEAR est sur le point d'être défini e
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Les paramètres sans fil de ce routeur ont été modifiés. Utilisez le nom de réseau (SSID) et la clé réseau (mot de passe) pour reconnecter votre appareil au routeur, puis cliquez sur le bouton <b>Terminer</b> ci-dessous pour terminer l'installation."
 bh_wl_ssid_name="Nom (SSID) du réseau sans fil 2,4 GHz : "
-bh_wl_password="Clé réseau sans fil (mot de passe)"
+bh_wl_password="Clé réseau sans fil (mot de passe):"
 bh_wl_password_2="Mot de passe (clé réseau) du réseau sans fil 2,4 GHz : "
 bh_wla_ssid_name="Nom (SSID) du réseau sans fil 5 GHz : "
 bh_wla_password_2="Mot de passe (clé réseau) du réseau sans fil 5 GHz : "
@@ -633,3 +605,4 @@ bh_router_admin="Paramètres administrateur du routeur :"
 bh_admin_user_name="Nom d'utilisateur administrateur :"
 bh_new_admin_passwd="Nouveau mot de passe administrateur :"
 bh_passwd_not_blank="Le mot de passe ne peut être vide!"
+finish_mark="Terminer"

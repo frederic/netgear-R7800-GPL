@@ -184,7 +184,7 @@ bh_connect_success_1="Internetna povezava je vzpostavljena."
 
 bh_connect_success_2="Za ta usmerjevalnik je bilo vnaprej nastavljeno enolično ime brezžičnega omrežja (SSID) in "
 
-bh_network_key="omrežni ključ (geslo)"
+bh_network_key="omrežni ključ (geslo)."
 
 bh_rollover_help_text="Za usmerjevalnik je bila vnaprej nastavljena brezžična zaščita WPA2-PSK, ki omrežje ščiti pred neželenim dostopom. Če se želite pridružiti brezžičnem omrežju, morate nastaviti omrežni ključ (geslo). Te prednastavitve so enolične za to napravo, podobno kot serijska številka.  Če jih želite spremeniti, lahko to storite pozneje na zaslonu Brezžične nastavitve ali v uporabniškem vmesniku usmerjevalnika."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Ime brezžičnega omrežja (SSID)"
 
 bh_wireless="Brezžično"
 
-bh_wpa_wpa2_passpharse="Omrežni ključ (geslo)"
+bh_wpa_wpa2_passpharse="Omrežni ključ (geslo):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Pomembna posodobitev"
 bh_wanlan_conflict_info="Za izognitev sporu s ponudnikom internetnih storitev je bil naslov IP usmerjevalnika posodobljen na "
 bh_continue_mark="Nadaljuj"
 bh_same_server_wan_ip="Naslov IP ne sme biti enak kot naslov strežnika!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD omogoča internetni oddaljeni dostop do pomnilnika USB, ki je vključen v vrata USB usmerjevalnika. Za uporabo storitve ReadyCLOUD morate imeti račun ReadyCLOUD. Če računa ReadyCLOUD še nimate, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">kliknite tukaj</a> in nato izberite <b>Prijava > Ustvari račun.</b> </p><p><b>Nastavitev storitve ReadyCLOUD</b></p><p><ol><li>V vrata USB usmerjevalnika priklopite pomnilniško napravo USB.</li><li>V spodnji polji vnesite uporabniško ime in geslo za račun ReadyCLOUD ter kliknite gumb <b>Registracija</b>. Usmerjevalnik in naprava USB sta registrirana v storitvi ReadyCLOUD.</li><li> Odprite spletno stran <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, kliknite Prijava, vnesite uporabniško ime in geslo računa ReadyCLOUD ter kliknite gumb <b>Prijava</b>.</li></ol></p><p>      Aplikacijo ReadyCLOUD lahko uporabljate tudi za vzpostavitev varne povezave med računalnikom ali mobilno napravo in pomnilniško napravo USB usmerjevalnika.<br>      Za prenos aplikacije ReadyCLOUD <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">kliknite tukaj</a>.</p>"
-ready_share_info1="Storitev ReadySHARE Cloud vam omogoča internetni oddaljeni dostop do pomnilnika USB, ki je vključen v vrata USB usmerjevalnika."
-how_setup_ready_share="Nastavitev storitve ReadySHARE Cloud"
-ready_share_step1="1. korak: potrebujete račun ReadySHARE Cloud. Če ga nimate,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>kliknite tukaj</a>, da ga ustvarite."
-ready_share_step2="2 korak: na tej strani vnesite uporabniško ime in geslo za ReadySHARE Cloud, da z računom registrirate usmerjevalnik in povezano napravo USB."
-ready_share_step3="3. korak: z računom se ponovno prijavite na strani <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>. Videti morate napravo USB, ki je povezana z usmerjevalnikom."
-ready_share_set_note="<b>Opomba:</b> brez odjemalca lahko brskate po vsebini naprave USB, ne morete pa odpirati ali spreminjati datotek."
-ready_share_start="Usmerjevalnik in napravo USB registrirajte z računom ReadyCLOUD"
-ready_share_get_account="Če nimate računa ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>kliknite tukaj</a>, da ga pridobite"
-username="Uporabniško ime"
-key_passphrase="Geslo"
-register="Registracija"
-register_note="<b>Opomba:</b> usmerjevalnik vzdržuje neprekinjeno povezavo z ReadyCLOUD, dokler ne prekličete registracije."
-help_center="Center za pomoč"
-help_show_hide="Prikaži/skrij center za pomoč"
-
-resister_user="Ta usmerjevalnik je registriran z naslednjim uporabnikom storitve ReadyCLOUD:"
-access_storage_method="Zdaj se lahko z računom ReadyCLOUD prijavite na spletni strani <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> in povsod dostopate do naprave USB."
-unregister_info="Kliknite <B>Prekliči registracijo</B>, da ta usmerjevalnik registrirate z drugim računom ReadyCLOUD"
-unregister="Prekliči registracijo"
-
-result_register_ok="Registracija je uspešno zaključena"
-result_register_fail="Registracija ni uspela. Preverite uporabniško ime in geslo ter poskusite znova."
-result_unreg_ok="Preklic registracije je uspešno zaključen"
-result_unreg_fail="Preklic registracije ni uspel"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Novi usmerjevalnik NETGEAR bo nastavljen v načinu dostopovne to
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Brezžične nastavitve tega usmerjevalnika so spremenjene. Uporabite naslednje ime brezžičnega omrežja (SSID) in omrežni ključ (geslom), da napravo znova povežite z usmerjevalnikom, ter kliknite gumb <b>Končaj</b> spodaj, da dokončate namestitev."
 bh_wl_ssid_name="Ime brezžičnega omrežja 2,4 GHz (SSID): "
-bh_wl_password="Ključ brezžičnega omrežja (geslo)"
+bh_wl_password="Ključ brezžičnega omrežja (geslo):"
 bh_wl_password_2="Geslo brezžičnega omrežja 2,4 GHz (omrežni ključ): "
 bh_wla_ssid_name="Ime brezžičnega omrežja 5 GHz (SSID): "
 bh_wla_password_2="Geslo brezžičnega omrežja 5 GHz (omrežni ključ): "
@@ -633,3 +605,4 @@ bh_router_admin="Skrbniške nastavitve usmerjevalnika:"
 bh_admin_user_name="Skrbniško uporabniško ime:"
 bh_new_admin_passwd="Novo skrbniško geslo:"
 bh_passwd_not_blank="Geslo ne sme biti prazno."
+finish_mark="Končaj"

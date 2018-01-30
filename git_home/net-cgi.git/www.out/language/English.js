@@ -184,7 +184,7 @@ bh_connect_success_1="You are successfully connected to the Internet."
 
 bh_connect_success_2="This router is preset with the following unique wireless network name (SSID) and "
 
-bh_network_key="network key (password)"
+bh_network_key="network key (password)."
 
 bh_rollover_help_text="Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Wireless Network Name (SSID)"
 
 bh_wireless="Wireless"
 
-bh_wpa_wpa2_passpharse="Network Key (Password)"
+bh_wpa_wpa2_passpharse="Network Key (Password):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Important Update"
 bh_wanlan_conflict_info="To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to "
 bh_continue_mark="Continue"
 bh_same_server_wan_ip="My IP address must not be the same as the Server Address !"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
-ready_share_info1="ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">click here</a>, then click <b>Sign In > Create Account</b>."
-how_setup_ready_share="To Set Up ReadyCLOUD"
-ready_share_step1="Connect a USB storage device to your router's USB port."
-ready_share_step2="Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD."
-ready_share_step3="Visit <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button."
-ready_share_set_note="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Click here</a> to download the ReadyCLOUD app."
-ready_share_start="Register your router and USB device with ReadyCLOUD"
-ready_share_get_account="If you don't have a ReadyCLOUD account <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a> to get one"
-username="Username"
-key_passphrase="Password"
-register="Register"
-register_note="<b>Note:</b> Your router keeps a continuous connection to ReadyCLOUD until you unregister."
-help_center="Help Center"
-help_show_hide="Show/Hide Help Center"
-
-resister_user="This router is registered with the following ReadyCLOUD user:"
-access_storage_method="Now you can login at <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> with your ReadyCLOUD account to access your USB device from anywhere."
-unregister_info="Click <B>Unregister</B> to register this router with a different ReadyCLOUD account"
-unregister="Unregister"
-
-result_register_ok="Registration completed successfully"
-result_register_fail="Registration failed. Please check your user name and password and try again."
-result_unreg_ok="Unregistration completed successfully"
-result_unreg_fail="Unregistration failed"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Your new NETGEAR router is about to be set up to access point mo
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="This router's wireless settings have been changed. Use the following wireless network name (SSID) and network key (password) to reconnect your device to the router, then click the <b>Finish</b> button below to complete the installation."
 bh_wl_ssid_name="2.4GHz Wireless Network Name (SSID): "
-bh_wl_password="Wireless Network Key (Password)"
+bh_wl_password="Wireless Network Key (Password):"
 bh_wl_password_2="2.4GHz Wireless Network Password (Network Key): "
 bh_wla_ssid_name="5GHz Wireless Network Name (SSID): "
 bh_wla_password_2="5GHz Wireless Network Password (Network Key): "
@@ -633,3 +605,4 @@ bh_router_admin="Router Admin Settings:"
 bh_admin_user_name="Admin User Name:"
 bh_new_admin_passwd="New Admin Password:"
 bh_passwd_not_blank="Password cannot be blank."
+finish_mark="Finish"

@@ -184,7 +184,7 @@ bh_connect_success_1="V-aţi conectat cu succes la Internet."
 
 bh_connect_success_2="Acest router este presetat cu următorul nume unic de reţea wireless (SSID) şi "
 
-bh_network_key="următoarea cheie de reţea (parolă)"
+bh_network_key="următoarea cheie de reţea (parolă)."
 
 bh_rollover_help_text="Routerul dvs. este presetat cu securitate wireless WPA2-PSK pentru a proteja reţeaua împotriva accesului nedorit. Pentru a accesa reţeaua wireless, trebuie să introduceţi cheia de reţea (parola). Aceste setări sunt unice pentru dispozitiv, ca un număr de serie.  Dacă doriţi să le modificaţi, o puteţi face mai târziu în ecranul Setări wireless din interfaţa grafică a routerului."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Nume reţea wireless (SSID)"
 
 bh_wireless="Wireless"
 
-bh_wpa_wpa2_passpharse="Cheie de reţea (parolă)"
+bh_wpa_wpa2_passpharse="Cheie de reţea (parolă):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Actualizare importantă"
 bh_wanlan_conflict_info="Pentru a evita un conflict cu furnizorul de servicii de Internet, adresa IP a routerului a fost actualizată la valoarea "
 bh_continue_mark="Continuare"
 bh_same_server_wan_ip="Adresa mea IP nu trebuie să fie identică cu adresa serverului!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD vă oferă acces de la distanţă, prin intermediul internetului, la un dispozitiv de stocare USB conectat la portul USB al routerului dvs. Pentru a utiliza ReadyCLOUD, trebuie să dispuneţi de un cont ReadyCLOUD. Dacă nu deţineţi un cont ReadyCLOUD,<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">faceţi clic aici</a>, apoi faceţi clic pe <b>Conectare > Creare cont</b>. </p><p><b>Pentru configuarea ReadyCLOUD</b></p><p><ol><li>Conectaţi un dispozitiv de stocare USB la portul USB al routerului.</li><li>Introduceţi numele de utilizator şi parola ReadyCLOUD în câmpurile de mai jos şi faceţi clic pe butonul <b>Înregistrare</b>. Routerul şi dispozitivul dvs. USB sunt înregistrate la ReadyCLOUD.</li><li> Vizitaţi <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, faceţi clic pe Conectare, introduceţi numele de utilizator şi parola dvs. ReadyCLOUD şi faceţi clic pe butonul <b>Conectare</b>.</li></ol></p><p>      De asemenea, puteţi utiliza aplicaţia ReadyCLOUD pentru a realiza o conexiune securizată dintre computerul sau dispozitivul dvs. mobil şi dispozitivul de stocare USB al routerului.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Faceţi clic aici</a> pentru a descărca aplicaţia ReadyCLOUD.</p>"
-ready_share_info1="Caracteristica ReadySHARE Cloud vă oferă acces de la distanţă prin Internet la un dispozitiv de stocare USB care este conectat la portul USB al routerului dvs."
-how_setup_ready_share="Cum se configurează ReadySHARE Cloud"
-ready_share_step1="Pasul 1: Aveţi nevoie de un cont ReadySHARE Cloud. Dacă nu aveţi cont,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>faceţi clic aici</a> pentru a obţine unul."
-ready_share_step2="Pasul 2: Pe această pagină, introduceţi numele de utilizator şi parola ReadySHARE Cloud pentru a vă înregistra routerul şi dispozitivul USB care este conectat la acesta utilizând contul dvs."
-ready_share_step3="Pasul 3: Reconectaţi-vă la <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> utilizând contul dvs. Trebuie să vedeţi dispozitivul USB care este conectat la routerul dvs."
-ready_share_set_note="<b>Notă:</b> Fără acest client, puteţi naviga prin conţinutul dispozitivului USB, dar nu puteţi deschide sau modifica fişiere."
-ready_share_start="Înregistraţi-vă routerul şi dispozitivul USB la ReadyCLOUD"
-ready_share_get_account="Dacă nu aveţi un cont ReadyCLOUD <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>faceţi click aici</a> pentru a vă crea unul"
-username="Nume de utilizator"
-key_passphrase="Parolã"
-register="Înregistrare"
-register_note="<b>Notă:</b> Routerul dvs. menţine o conexiune curentă cu ReadyCLOUD până la anularea înregistrării."
-help_center="Centru de asistenţă"
-help_show_hide="Afişare/Ascundere centru de asistenţă"
-
-resister_user="Acest router este înregistrat cu următorul nume de utilizator ReadyCLOUD:"
-access_storage_method="Acum vă puteţi conecta pe <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> cu contul dvs. ReadyCLOUD pentru a vă accesa dispozitivul USB de oriunde."
-unregister_info="Apăsaţi <B>Anulare înregistrare</B> pentru a înregistra acest router cu un cont ReadyCLOUD diferit"
-unregister="Anulare înregistrare"
-
-result_register_ok="Înregistrare finalizată cu succes"
-result_register_fail="Înregistrare nereuşită. Vă rugăm să verificaţi numele de utilizator şi parola şi să încercaţi din nou."
-result_unreg_ok="Anulare înregistrare finalizată cu succes"
-result_unreg_fail="Anulare înregistrare eşuată"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Noul dvs. router NETGEAR este pe cale de a fi configurat în mod
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Setările wireless ale acestui router au fost modificate. Utilizaţi următorul nume de reţea wireless (SSID) şi următoarea cheie de reţea (parolă) pentru reconectarea dispozitivului la rpouter şi apoi clic pe butonul <b>Finalizare</b><b> </b>de mai jos pentru a finaliza instalarea."
 bh_wl_ssid_name="Nume de reţea wireless de 2,4 GHz (SSID): "
-bh_wl_password="Cheie de reţea (Parolă )"
+bh_wl_password="Cheie de reţea (Parolă ):"
 bh_wl_password_2="Parolă de reţea wireless de 2,4 GHz (Cheie de reţea): "
 bh_wla_ssid_name="Nume de reţea wireless de 5 GHz (SSID): "
 bh_wla_password_2="Parolă de reţea wireless de 5 GHz (Cheie de reţea): "
@@ -633,3 +605,4 @@ bh_router_admin="Setări admin router:"
 bh_admin_user_name="Nume utilizator admin:"
 bh_new_admin_passwd="Parolă nouă admin:"
 bh_passwd_not_blank="Parola nu poate fi necompletatã."
+finish_mark="Finalizare"

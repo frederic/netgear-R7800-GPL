@@ -196,7 +196,7 @@ bh_wirless_name="Nombre de red inalámbrica (SSID)"
 
 bh_wireless="Conexión inalámbrica"
 
-bh_wpa_wpa2_passpharse="Clave de red (contraseña)"
+bh_wpa_wpa2_passpharse="Clave de red (contraseña):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Actualización importante"
 bh_wanlan_conflict_info="Para evitar un conflicto con su proveedor de servicios de Internet, se ha actualizado la dirección IP de su router a "
 bh_continue_mark="Continuar"
 bh_same_server_wan_ip="Mi dirección IP no puede coincidir con la dirección del servidor."
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD le ofrece acceso remoto a través de Internet a un dispositivo de almacenamiento USB conectado al puerto USB de su router. Para utilizar ReadyCLOUD, debe disponer de una cuenta. Si no dispone de una cuenta ReadyCLOUD,<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\"> haga clic aquí</a> y, a continuación, haga clic en <b>Iniciar sesión > Crear cuenta</b>. </p><p><b>Para configurar ReadyCLOUD</b></p><p><ol><li>Conecte un dispositivo de almacenamiento USB al puerto USB del router.</li><li>Introduzca su nombre de usuario y contraseña ReadyCLOUD en los campos que aparecen a continuación y haga clic en el botón <b>Registrar</b>. El router y el dispositivo USB se han registrado con ReadyCLOUD.</li><li> Visite <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, haga clic en Iniciar sesión, introduzca su nombre de usuario y contraseña de ReadyCLOUD, y haga clic en el botón <b>Iniciar sesión</b>.</li></ol></p><p>      También puede utilizar la aplicación ReadyCLOUD para establecer una conexión segura entre su equipo o dispositivo móvil y el dispositivo de almacenamiento USB del router.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Haga clic aquí</a> para descargar la aplicación ReadyCLOUD.</p>"
-ready_share_info1="La función ReadySHARE Cloud le ofrece acceso remoto a través de Internet a un dispositivo de almacenamiento USB conectado al puerto USB de su router."
-how_setup_ready_share="Configuración de ReadySHARE Cloud"
-ready_share_step1="Paso 1. Necesita una cuenta de ReadySHARE Cloud. Si aún no tiene una, <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>haga clic aquí</a> para crearla."
-ready_share_step2="Paso 2. En esta página, introduzca su nombre de usuario y contraseña de ReadySHARE Cloud para registrar su router y el dispositivo USB que está conectado al mismo en su cuenta."
-ready_share_step3="Paso 3. Vuelva a iniciar sesión en <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> con los datos de su cuenta. Debe aparecer el dispositivo USB conectado a su router."
-ready_share_set_note="<b>Nota:</b> sin esta aplicación cliente, podrá examinar el contenido del dispositivo USB pero no podrá abrir archivos ni realizar cambios en ellos."
-ready_share_start="Registre su router y su dispositivo USB con ReadyCLOUD"
-ready_share_get_account="Si no tiene una cuenta de ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>haga clic aquí</a> para obtener una"
-username="Nombre de usuario"
-key_passphrase="Contraseña"
-register="Registrarse"
-register_note="<b>Nota:</b> La conexión de Internet entre el router y el servicio de ReadyCLOUD seguirá activa hasta que anule el registro."
-help_center="Centro de ayuda"
-help_show_hide="Mostrar/ocultar el centro de ayuda"
-
-resister_user="Este router está registrado con el siguiente usuario de ReadyCLOUD:"
-access_storage_method="Ahora ya puede iniciar una sesión en <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> con su cuenta ReadyCLOUD para acceder a su dispositivo USB desde cualquier lugar."
-unregister_info="Haga clic en <B>Anular registro</B> para registrar este router con otra cuenta de ReadyCLOUD"
-unregister="Anular registro"
-
-result_register_ok="Registro realizado correctamente"
-result_register_fail="Error en el registro. Compruebe su nombre de usuario y contraseña e inténtelo de nuevo."
-result_unreg_ok="Anulación de registro realizada correctamente"
-result_unreg_fail="Error en la anulación de registro"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="El nuevo router NETGEAR está a punto de ser configurado en el m
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Ha modificado la configuración inalámbrica del router. Utilice el siguiente nombre de la red inalámbrica (SSID) y clave de red (contraseña) para volver a conectar el dispositivo al router y, a continuación, haga clic en el botón <b>Finalizar</b> para completar la instalación."
 bh_wl_ssid_name="Nombre de la red inalámbrica (SSID) de 2,4 GHz:"
-bh_wl_password="Clave de red inalámbrica (contraseña)"
+bh_wl_password="Clave de red inalámbrica (contraseña):"
 bh_wl_password_2="Contraseña de la red inalámbrica (Clave de red) de 2,4 GHz:"
 bh_wla_ssid_name="Nombre de la red inalámbrica (SSID) de 5GHz:"
 bh_wla_password_2="Contraseña de la red inalámbrica (Clave de red) de 5GHz:"
@@ -633,3 +605,4 @@ bh_router_admin="Configuración del administrador del router:"
 bh_admin_user_name="Nombre de usuario del administrador:"
 bh_new_admin_passwd="Nueva contraseña de administración:"
 bh_passwd_not_blank="La contraseña no puede dejarse en blanco."
+finish_mark="Finalizar"

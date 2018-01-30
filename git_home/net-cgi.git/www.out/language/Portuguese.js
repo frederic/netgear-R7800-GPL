@@ -184,7 +184,7 @@ bh_connect_success_1="A conexão com a Internet foi realizada com êxito."
 
 bh_connect_success_2="Este roteador está predefinido com o seguinte nome de rede sem fio exclusivo (SSID) e "
 
-bh_network_key="chave de rede (senha)"
+bh_network_key="chave de rede (senha)."
 
 bh_rollover_help_text="Seu roteador está predefinido com a segurança sem fio WPA2-PSK para proteger a rede contra acesso não autorizado. Para ingressar em uma rede sem fio, insira a chave de rede (senha). As configurações predefinidas são exclusivas para este dispositivo, como um número de série.  Caso queira alterá-las, vá até a tela Wireless Settings (Configurações sem fio) na interface gráfica de usuário da Web do roteador."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Nome da rede sem fio (SSID)"
 
 bh_wireless="Sem fio"
 
-bh_wpa_wpa2_passpharse="Chave de rede (senha)"
+bh_wpa_wpa2_passpharse="Chave de rede (senha):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Atualização importante"
 bh_wanlan_conflict_info="Para evitar conflitos com o provedor de serviços de Internet, o endereço IP do roteador deve ser atualizado para "
 bh_continue_mark="Continuar"
 bh_same_server_wan_ip="Meu endereço IP não pode ser igual ao endereço do servidor!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>O ReadyCLOUD oferece acesso remoto através da Internet a um dispositivo de armazenamento USB ligado à porta USB do router. Para utilizar o ReadyCLOUD, precisa de uma conta ReadyCLOUD. Se não tiver uma conta ReadyCLOUD,<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">clique aqui</a> e, em seguida, clique em <b>Iniciar sessão > Criar conta</b>. </p><p><b>Para configurar o ReadyCLOUD</b></p><p><ol><li>Ligue um dispositivo de armazenamento USB à porta USB do seu router.</li><li>Introduza o nome de utilizador e a palavra-passe ReadyCLOUD nos campos abaixo e clique no botão <b>Registar</b>. O seu router e o dispositivo USB estão associados ao ReadyCLOUD.</li><li> Visite <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, clique em Iniciar sessão, introduza o seu nome de utilizador e palavra-passe ReadyCLOUD e clique no botão <b>Iniciar a sessão</b>.</li></ol></p><p>      Também pode utilizar a aplicação ReadyCLOUD para estabelecer uma ligação segura entre o seu computador ou dispositivo móvel e o dispositivo de armazenamento USB do router.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Clique aqui</a> para transferir a aplicação ReadyCLOUD.</p>"
-ready_share_info1="O recurso ReadySHARE Cloud oferece acesso remoto na Internet para um dispositivo de armazenamento USB, conectado à porta USB do roteador."
-how_setup_ready_share="Como configurar o ReadySHARE Cloud"
-ready_share_step1="Etapa 1: É necessário uma conta ReadySHARE Cloud. Se você não tiver uma,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>clique aqui</a> para criá-la."
-ready_share_step2="Etapa 2: Nesta página, insira seu nome de usuário e senha do ReadySHARE Cloud para registrar seu roteador e o dispositivo USB conectado a ele com sua conta."
-ready_share_step3="Etapa 3: Faça login novamente em <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> com a sua conta. Você deverá visualizar o dispositivo USB conectado ao roteador."
-ready_share_set_note="<b>Nota:</b> Sem esse cliente, você pode navegar no conteúdo do dispositivo USB, mas não é possível abrir ou fazer alterações nos arquivos."
-ready_share_start="Associe o seu router e o dispositivo USB com o ReadyCLOUD"
-ready_share_get_account="Se ainda não tem uma conta ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>clique aqui</a> para obter uma"
-username="Nome de usuário"
-key_passphrase="Senha"
-register="Registro"
-register_note="<b>Nota:</b> o seu router mantém uma ligação contínua ao ReadyCLOUD até anular o registo."
-help_center="Centro de Ajuda"
-help_show_hide="Mostrar/ocultar centro de ajuda"
-
-resister_user="Este router está associado ao seguinte utilizador ReadyCLOUD:"
-access_storage_method="Agora, pode iniciar sessão em <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> com a sua conta ReadyCLOUD para aceder ao dispositivo USB em qualquer lugar."
-unregister_info="Clique em <B>Anular registo</B> para associar este router a uma conta ReadyCLOUD diferente"
-unregister="Cancelar registro"
-
-result_register_ok="Registro concluído com sucesso"
-result_register_fail="Falha no registo. Verifique o seu nome de utilizador e palavra-passe e tente novamente."
-result_unreg_ok="Cancelamento do registro concluído com sucesso"
-result_unreg_fail="Falha ao cancelar registro"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="O seu novo router NETGEAR está prestes a ser configurado para o
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="As definições sem fios deste router foram alteradas. Utilize o seguinte nome de rede sem fios (SSID) e chave de rede (palavra-passe) para ligar novamente o dispositivo ao router e, em seguida, clique no botão <b>Concluir</b> abaixo para concluir a instalação."
 bh_wl_ssid_name="Nome da rede sem fios 2,4 GHz (SSID): "
-bh_wl_password="Chave de rede sem fios (Palavra-passe)"
+bh_wl_password="Chave de rede sem fios (Palavra-passe):"
 bh_wl_password_2="Palavra-passe da rede sem fios 2,4 GHz (Chave de rede): "
 bh_wla_ssid_name="Nome da rede sem fios 5 GHz (SSID): "
 bh_wla_password_2="Palavra-passe da rede sem fios 5 GHz (Chave de rede): "
@@ -633,3 +605,4 @@ bh_router_admin="Definições de administrador do router:"
 bh_admin_user_name="Nome de utilizador do administrador:"
 bh_new_admin_passwd="Nova palavra-passe do administrador:"
 bh_passwd_not_blank="A senha não pode ficar em branco."
+finish_mark="Concluir"

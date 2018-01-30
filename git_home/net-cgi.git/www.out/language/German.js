@@ -184,7 +184,7 @@ bh_connect_success_1="Sie sind jetzt mit dem Internet verbunden."
 
 bh_connect_success_2="Für den Router wurde folgender eindeutiger Netzwerkname (SSID) und "
 
-bh_network_key="Netzwerkschlüssel (Passwort) voreingestellt"
+bh_network_key="Netzwerkschlüssel (Passwort) voreingestellt."
 
 bh_rollover_help_text="Damit Ihr Netzwerk vor unerwünschtem Zugriff geschützt ist, wurde der Router bereits mit WPA2-PSK-Sicherheit vorkonfiguriert. Um eine Verbindung mit dem drahtlosen Netzwerk herzustellen, geben Sie den Netzwerkschlüssel (Passwort) ein. Diese Voreinstellungen sind bei diesem Gerät individuell, wie z. B. eine Seriennummer.  Sie können die Einstellungen später in der Benutzeroberfläche des Routers auf dem Bildschirm WLAN-Konfiguration ändern."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Wireless-Netzwerkname (SSID)"
 
 bh_wireless="WLAN"
 
-bh_wpa_wpa2_passpharse="Netzwerkschlüssel (Passwort)"
+bh_wpa_wpa2_passpharse="Netzwerkschlüssel (Passwort):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Wichtige Information"
 bh_wanlan_conflict_info="Um Konflikte mit Ihrem Internet Provider zu vermeiden, lautet die neue  IP-Adresse des Routers jetzt "
 bh_continue_mark="Weiter"
 bh_same_server_wan_ip="Die eigene IP-Adresse darf nicht mit der Server-Adresse identisch sein!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>Mit ReadyCLOUD erhalten Sie Remote-Zugriff über das Internet auf ein USB-Speichergerät, das mit dem USB-Port Ihres Routers verbunden ist. Um ReadyCLOUD zu verwenden, müssen Sie über ein ReadyCLOUD-Konto verfügen. Wenn Sie nicht über ein ReadyCLOUD-Konto verfügen, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">klicken Sie hier</a>, und klicken Sie dann auf<b> Anmelden > Konto erstellen</b>. </p><p><b>So konfigurieren Sie ReadyCLOUD</b></p><p><ol><li>Schließen Sie ein USB-Speichergerät an den USB-Port des Routers an.</li><li>Geben Sie Ihren ReadyCLOUD-Benutzernamen und das -Passwort in die Felder unten ein, und klicken Sie auf die Schaltfläche <b>Registrieren</b>. Ihr Router und das USB-Gerät sind bei ReadyCLOUD registriert.</li><li> Besuchen Sie <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, klicken Sie auf <b>Anmelden</b>, geben Sie Ihren ReadyCLOUD-Benutzernamen und das -Passwort ein, und klicken Sie auf die Schaltfläche <b>Anmelden</b>.</li></ol></p><p>      Sie können auch die ReadyCLOUD-App verwenden, um eine sichere Verbindung zwischen Ihrem Computer oder mobilen Gerät und dem USB-Speichergerät des Routers herzustellen.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Klicken Sie hier</a>, um die ReadyCLOUD-App herunterzuladen.</p>"
-ready_share_info1="Mit der ReadySHARE Cloud-Funktion erhalten Sie Remote-Zugriff über das Internet auf ein USB-Speichergerät, das mit dem USB-Port Ihres Routers verbunden ist."
-how_setup_ready_share="So richten Sie ReadySHARE Cloud ein"
-ready_share_step1="Schritt 1: Sie benötigen ein ReadySHARE Cloud-Konto. Wenn Sie noch nicht über ein Konto verfügen,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>klicken Sie hier</a>, um dieses einzurichten."
-ready_share_step2="Schritt 2: Geben Sie auf dieser Seite Ihren ReadySHARE Cloud-Benutzernamen und Ihr Passwort ein, um den Router und das an ihn angeschlossene USB-Speichergerät bei Ihrem Konto zu registrieren."
-ready_share_step3="Schritt 3: Melden Sie sich wieder mit Ihrem Konto bei <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> an. Sie sollten nun das an Ihren Router angeschlossene USB-Gerät sehen."
-ready_share_set_note="<b>Hinweis:</b> Ohne diesen Client können Sie den Inhalt des USB-Geräts durchsuchen aber keine Dateien öffnen oder Änderungen an ihnen vornehmen."
-ready_share_start="Registrieren Sie Ihren Router und das USB-Gerät bei ReadyCLOUD"
-ready_share_get_account="Wenn Sie kein ReadyCLOUD-Konto haben, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>klicken Sie hier</a>, um eines zu erstellen."
-username="Benutzername"
-key_passphrase="Passwort"
-register="Registrieren"
-register_note="<b>Hinweis:</b> Ihr Router behält eine ständige Verbindung mit ReadyCLOUD bei, bis Sie die Registrierung aufheben."
-help_center="Hilfe-Center"
-help_show_hide="Hilfe-Center ein-/ausblenden"
-
-resister_user="Diese Router ist mit dem folgenden ReadyCLOUD-Benutzer registriert:"
-access_storage_method="Nun können Sie sich mit ihrem ReadyCLOUD-Konto für den Zugriff auf das USB-Gerät von einem beliebigen Standort bei <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> anmelden."
-unregister_info="Klicken Sie auf <B>Registrierung aufheben</B>, um diesen Router mit einem anderen ReadyCLOUD-Konto zu registrieren."
-unregister="Registrierung aufheben"
-
-result_register_ok="Registrierung erfolgreich abgeschlossen"
-result_register_fail="Registrierung fehlgeschlagen. Bitte überprüfen Sie Ihren Benutzernamen und das Passwort, und versuchen Sie es erneut."
-result_unreg_ok="Abmeldung erfolgreich abgeschlossen"
-result_unreg_fail="Abmeldung fehlgeschlagen"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Ihr neuer NETGEAR-Router wird gleich im Access Point-Modus einge
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Die WLAN-Konfiguration dieses Routers wurden geändert. Verwenden Sie den folgenden WLAN-Netzwerknamen (SSID) und den Netzwerkschlüssel (Passwort), um die Verbindung Ihres Geräts mit dem Router wieder herzustellen, und klicken Sie unten auf die Schaltfläche <b>Fertig stellen</b>, um die Installation abzuschließen."
 bh_wl_ssid_name="2,4 GHz-WLAN-Netzwerkname (SSID):"
-bh_wl_password="WLAN-Netzwerkschlüssel (Passwort)"
+bh_wl_password="WLAN-Netzwerkschlüssel (Passwort):"
 bh_wl_password_2="2,4 GHz-WLAN-Netzwerkpasswort (Netzwerkschlüssel):"
 bh_wla_ssid_name="5 GHz-WLAN-Netzwerkname (SSID):"
 bh_wla_password_2="5 GHz-WLAN-Netzwerkpasswort (Netzwerkschlüssel):"
@@ -633,3 +605,4 @@ bh_router_admin="Router-Administratoreinstellungen:"
 bh_admin_user_name="Administrator Benutzername:"
 bh_new_admin_passwd="Neues Administrator-Passwort:"
 bh_passwd_not_blank="Passwort darf nicht leer sein!"
+finish_mark="Fertig stellen"

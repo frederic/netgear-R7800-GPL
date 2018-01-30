@@ -184,7 +184,7 @@ bh_connect_success_1="İnternet'e başarıyla bağlandınız."
 
 bh_connect_success_2="Bu yönlendirici, aşağıdaki benzersiz kablosuz ağ adı (SSID) ve ... ile önceden ayarlanmıştır "
 
-bh_network_key="ağ anahtarı (parola)"
+bh_network_key="ağ anahtarı (parola)."
 
 bh_rollover_help_text="Yönlendiriciniz, ağınızı istenmeyen erişimlere karşı korumak için WPA2-PSK kablosuz güvenliği ile önceden ayarlanmıştır. Kablosuz ağa katılmak için, ağ anahtarını (parola) girmeniz gerekir. Bu önceden yapılmış ayarlar, seri numarası gibi bu aygıta özgüdür.  Bunları değiştirmek isterseniz, bunu yönlendirici web GUI'sindeki Kablosuz Ayarları ekranında daha sonra yapabilirsiniz."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Kablosuz Ağ Adı (SSID)"
 
 bh_wireless="Kablosuz"
 
-bh_wpa_wpa2_passpharse="Ağ Anahtarı (Parola)"
+bh_wpa_wpa2_passpharse="Ağ Anahtarı (Parola):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Önemli Güncelleştirme"
 bh_wanlan_conflict_info="İnternet Servis Sağlayıcınızla bir çakışma olmasını önlemek için, yönlendiricinizin IP adresi şu değeri alması için güncelleştirilmiştir: "
 bh_continue_mark="Devam"
 bh_same_server_wan_ip="IP adresim, Sunucu Adresi ile aynı olmamalı!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD, router'ınızın USB bağlantı noktasına bağlı bir USB depolama aygıtına İnternet üzerinden uzaktan erişebilmenizi sağlar. ReadyCLOUD özelliğini kullanmak için bir ReadyCLOUD hesabınız olmalıdır. ReadyCLOUD hesabınız yoksa <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">buraya tıklayın</a>, ardından <b>Oturum Aç> Hesap Oluştur</b> düğmesine tıklayın. </p><p><b>ReadyCLOUD özelliğini ayarlama</b></p><p><ol><li>Router'ınızın USB bağlantı noktasına bir USB depolama aygıtı takın.</li><li>Aşağıdaki alanlara ReadyCLOUD kullanıcı adınızı ve parolanızı girin ve <b>Kaydet</b> düğmesine tıklayın. Router'ınız ve USB aygıtınız ReadyCLOUD özelliğine kaydolur.</li><li> <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a> adresini ziyaret edin, Oturum Aç düğmesine tıklayın, ReadyCLOUD kullanıcı adınızı ve parolanızı girin ve <b>Oturum Aç</b> düğmesine tıklayın.</li></ol></p><p>      Bilgisayarınız ya da mobil aygıtınız ve router'ınızın USB depolama aygıtı arasında güvenli bir bağlantı kurmak için de ReadyCLOUD uygulamasını kullanabilirsiniz.<br>      ReadyCLOUD uygulamasını indirmek için <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">buraya tıklayın</a>.</p>"
-ready_share_info1="ReadySHARE Cloud özelliği, yönlendiricinizin USB bağlantı noktasına bağlı bir USB depolama aygıtına İnternet üzerinden erişebilmenizi sağlar."
-how_setup_ready_share="ReadySHARE Cloud Nasıl Ayarlanır?"
-ready_share_step1="1. Adım: Bir ReadySHARE Cloud hesabınız olmalıdır. Hesabınız yoksa, hesap almak için <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>buraya tıklayın</a>."
-ready_share_step2="2. Adım: Bu sayfada, yönlendiricinizi ve yönlendiriciye bağlı USB aygıtını hesabınıza kaydetmek için ReadySHARE Cloud kullanıcı adınızı ve parolanızı girin."
-ready_share_step3="3. Adım: Hesabınızla tekrar <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com</a> sayfasında oturum açın. Yönlendiricinize bağlı olan USB aygıtını görmeniz gerekir."
-ready_share_set_note="<b>Not:</b> Bu istemci olmadan, USB aygıtı içeriğine göz atabilirsiniz, ancak dosyaları açamaz ve dosyalarda değişiklik yapamazsınız"
-ready_share_start="Router'ınızı ve USB aygıtınızı ReadyCLOUD'a kaydedin"
-ready_share_get_account="ReadyCLOUD hesabınız yoksa oluşturmak için <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>buraya tıklayın</a>"
-username="Kullanıcı Adı"
-key_passphrase="Parola"
-register="Kaydet"
-register_note="<b>Not:</b> Kaydınızı silene kadar router'ınız ReadyCLOUD özelliğine kesintisiz şekilde bağlı kalır."
-help_center="Yardım Merkezi"
-help_show_hide="Yardım Merkezini Göster/Gizle"
-
-resister_user="Bu router, şu ReadyCLOUD kullanıcısıyla ilişkilendirilmiştir:"
-access_storage_method="Artık USB aygıtınıza her yerden erişmek için ReadyCLOUD hesabınızla <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> adresinde oturum açabilirsiniz."
-unregister_info="Bu router'ı farklı bir ReadyCLOUD hesabıyla ilişkilendirmek için <B>Kaydı sil</B> seçeneğine tıklayın"
-unregister="Kaydı Sil"
-
-result_register_ok="Kayıt başarıyla tamamlandı"
-result_register_fail="Kayıt başarısız oldu. Lütfen kullanıcı adınızı ve parolanızı kontrol edip tekrar deneyin."
-result_unreg_ok="Kayıt silme işlemi başarıyla tamamlandı"
-result_unreg_fail="Kayıt silinemedi"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Yeni NETGEAR router'ınız kısa süre içinde erişim noktası 
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Bu router'ın kablosuz ayarları değiştirildi. Aygıtınızı router'a yeniden bağlamak için aşağıdaki kablosuz ağ adını (SSID) ve ağ anahtarını (parola) kullanın, ardından <b>Son</b> düğmesine tıklayarak kurulumu tamamlayın."
 bh_wl_ssid_name="2,4 GHz Kablosuz Ağ Adı (SSID): "
-bh_wl_password="Kablosuz Ağ Anahtarı (Parola)"
+bh_wl_password="Kablosuz Ağ Anahtarı (Parola):"
 bh_wl_password_2="2,4 GHz Kablosuz Ağ Parolası (Ağ Anahtarı): "
 bh_wla_ssid_name="5 GHz Kablosuz Ağ Adı (SSID): "
 bh_wla_password_2="5 GHz Kablosuz Ağ Parolası (Ağ Anahtarı): "
@@ -633,3 +605,4 @@ bh_router_admin="Router Yönetici Ayarları:"
 bh_admin_user_name="Yönetici Kullanıcı Adı:"
 bh_new_admin_passwd="Yeni Yönetici Parolası:"
 bh_passwd_not_blank="Parola boş olamaz."
+finish_mark="Son"

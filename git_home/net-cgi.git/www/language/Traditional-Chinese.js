@@ -184,7 +184,7 @@ bh_connect_success_1="您已成功連線至網際網路。"
 
 bh_connect_success_2="此路由器已預設下列唯一的無線網路名稱 (SSID) 和"
 
-bh_network_key="網路金鑰（密碼）"
+bh_network_key="網路金鑰（密碼）。"
 
 bh_rollover_help_text="您的路由器已預設 WPA2-PSK 無線安全性設定，以防您的網路遭受未經授權的存取。要加入該無線網路，您必須輸入網路金鑰（密碼）。這些預設設定對於此裝置是唯一的，就像序號一樣。如需變更，可稍後在路由器網頁圖形介面的「無線設定」畫面中進行變更。" 
 
@@ -196,7 +196,7 @@ bh_wirless_name="SSID"
 
 bh_wireless="無線"
 
-bh_wpa_wpa2_passpharse="網路金鑰（密碼）" 
+bh_wpa_wpa2_passpharse="網路金鑰（密碼）:" 
 
 bh_save_settings="保持路由器設定"
 
@@ -237,34 +237,6 @@ bh_important="重要的更新"
 bh_wanlan_conflict_info="為了避免和你的網際網路服務供應商的 IP 位址發生衝突，路由器的 IP 位址已經更新為"
 bh_continue_mark="繼續"
 bh_same_server_wan_ip="我的 IP 位址不可與伺服器位址相同！"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD 可讓您透過網際網路，從遠端存取連接至路由器 USB 連接埠的 USB 儲存裝置。 如要使用 ReadyCLOUD，>您必須擁有 ReadyCLOUD 帳戶。 若您沒有 ReadyCLOUD 帳戶，請<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">按一下這裡</a>，然後按一下<b>登入 > 建立帳戶</b>。 </p><p><b>設定 ReadyCLOUD</b></p><p><ol><li>將 USB 儲存裝置連接至路由器的 USB 連接埠。</li><li>在下方欄位中輸入您的 ReadyCLOUD 使用者名稱和密碼，然後按一下<b>註冊</b>按鈕。 您的路由器和 USB 裝置即會註冊至 ReadyCLOUD。</li><li> 造訪 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>，按一下「登入」，輸入您的 ReadyCLOUD 使用者名稱和密碼，然後按一下<b>>登入</b>按鈕。</li></ol></p><p>      您也可以使用 ReadyCLOUD 應用程式，在您的電腦或行動裝置與路由器的 USB 儲存裝置間建立安全連線。<br>      請<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">按一下這裡</a>，下載 ReadyCLOUD 應用程式。</p>"
-ready_share_info1="ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">click here</a>, then click <b>Sign In > Create Account</b>."
-how_setup_ready_share="如何設定 ReadySHARE Cloud"
-ready_share_step1="Connect a USB storage device to your router's USB port."
-ready_share_step2="Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD."
-ready_share_step3="Visit <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button."
-ready_share_set_note="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Click here</a> to download the ReadyCLOUD app."
-ready_share_start="使用 ReadyCLOUD 註冊路由器和 USB 裝置"
-ready_share_get_account="如果您沒有 ReadyCLOUD 帳戶，請<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>按一下這裡</a>取得"
-username="使用者名稱"
-key_passphrase="密碼"
-register="註冊"
-register_note="<b>注意：</b>您的路由器在您取消註冊前，會持續連線至 ReadyCLOUD。"
-help_center="說明中心"
-help_show_hide="顯示/隱藏説明中心"
-
-resister_user="下列 ReadyCLOUD 使用者已註冊此路由器："
-access_storage_method="現在您可以用 ReadyCLOUD 帳戶登入 <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>，從任何位置存>取 USB 裝置。"
-unregister_info="按一下<B>取消註册</B>以使用其他 ReadyCLOUD 帳戶註冊此路由器"
-unregister="取消註册"
-
-result_register_ok="已成功完成註冊"
-result_register_fail="註冊失敗。 請檢查您的使用者名稱和密碼，然後再試一次。"
-result_unreg_ok="已成功完成取消註冊"
-result_unreg_fail="取消註冊失敗"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="您的新 NETGEAR 路由器即將設為「存取點模式」。 
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="此路由器的無線設定已變更。 使用下列無線網路名稱 (SSID) 和網路金鑰（密碼），將您的裝置重新連線至路由器，然後按一下下方的<b>完成</b>按鈕即可完成安裝。"
 bh_wl_ssid_name="2.4GHz 無線網路名稱 (SSID)："
-bh_wl_password="無線網路金鑰（密碼）"
+bh_wl_password="無線網路金鑰（密碼）:"
 bh_wl_password_2="2.4GHz 無線網路密碼（網路金鑰）："
 bh_wla_ssid_name="5GHz 無線網路名稱 (SSID)："
 bh_wla_password_2="5GHz 無線網路密碼（網路金鑰）："
@@ -633,3 +605,4 @@ bh_router_admin="路由器管理設定："
 bh_admin_user_name="管理使用者名稱："
 bh_new_admin_passwd="新管理密碼："
 bh_passwd_not_blank="密碼不能為空白。"
+finish_mark="完成"

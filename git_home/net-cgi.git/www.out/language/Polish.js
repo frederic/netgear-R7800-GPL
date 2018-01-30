@@ -184,7 +184,7 @@ bh_connect_success_1="Udało się połączyć z Internetem."
 
 bh_connect_success_2="Ten router ma wstępnie ustawioną, unikalną nazwę sieci (SSID) i "
 
-bh_network_key="klucz sieci (hasło)"
+bh_network_key="klucz sieci (hasło)."
 
 bh_rollover_help_text="Twój router został wstępnie skonfigurowany wraz z zabezpieczeniem komunikacji bezprzewodowej WPA2-PSK, które zabezpiecza Twoją sieć przed włamaniem. Aby wejść do sieci bezprzewodowej należy najpierw wprowadzić słowo-klucz (hasło). Opisane ustawienia wstępne są unikatowe dla urządzenia, podobnie jak numer seryjny.  Aby je zmienić, należy przejść do ekranu Ustawienia komunikacji bezprzewodowej sieciowego graficznego interfejsu użytkownika routera."
 
@@ -196,7 +196,7 @@ bh_wirless_name="Nazwa sieci bezprzewodowej (SSID)"
 
 bh_wireless="Sieć bezprzewodowa"
 
-bh_wpa_wpa2_passpharse="Klucz sieci (hasło)"
+bh_wpa_wpa2_passpharse="Klucz sieci (hasło):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="Ważne"
 bh_wanlan_conflict_info="Aby uniknąć konfliktu z usługodawcą internetowym, adres IP routera został zaktualizowany do postaci "
 bh_continue_mark="Kontynuuj"
 bh_same_server_wan_ip="Wartości w polu Mój adres IP i Adres serwera muszą się różnić!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>Funkcja ReadyCLOUD zapewnia zdalny dostęp przez Internet do urządzenia pamięci USB podłączonego do portu USB routera. Aby korzystać z funkcji ReadyCLOUD, musisz mieć konto ReadyCLOUD. Jeśli nie masz konta ReadyCLOUD, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">kliknij tutaj</a>, a następnie kliknij kolejno pozycje <b>Zaloguj > Utwórz konto</b>. </p><p><b>Aby skonfigurować usługę ReadyCLOUD</b></p><p><ol><li>Podłącz urządzenie pamięci masowej do gniazda USB w routerze.</li><li>W polach widocznych poniżej wprowadź nazwę użytkownika oraz hasło do serwisu ReadyCLOUD, a następnie kliknij przycisk <b>Rejestracja</b>. Router i urządzenie USB są zarejestrowane w usłudze ReadyCLOUD.</li><li> Odwiedź stronę <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, kliknij pozycję Zaloguj, po czym wprowadź nazwę użytkownika i hasło do usługi ReadyCLOUD i kliknij przycisk <b>Zaloguj</b>.</li></ol></p><p>      Możesz także nawiązać bezpieczne połączenie między komputerem lub urządzeniem mobilnym oraz urządzeniem pamięci masowej podłączonym do routera za pomocą aplikacji ReadyCLOUD.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Kliknij tutaj</a>, aby pobrać aplikację ReadyCLOUD.</p>"
-ready_share_info1="Usługa ReadySHARE Cloud zapewnia zdalny dostęp przez Internet do urządzenia pamięci USB podłączonego do portu USB routera."
-how_setup_ready_share="Sposób konfiguracji usługi ReadySHARE Cloud"
-ready_share_step1="Krok 1: Wymagane jest konto ReadySHARE Cloud. Jeśli jeszcze go nie masz,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>kliknij tutaj</a>, aby je założyć."
-ready_share_step2="Krok 2: Na tej stronie wprowadź nazwę użytkownika usługi ReadySHARE Cloud i hasło w celu zarejestrowania routera i podłączonego do niego urządzenia USB w ramach tego konta."
-ready_share_step3="Krok 3: Zaloguj się ponownie do konta na stronie <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>. Urządzenie USB podłączone do routera powinno być widoczne."
-ready_share_set_note="<b>Uwaga:</b> Bez klienta możliwe jest przeglądanie zawartości urządzenia USB, ale nie jest możliwe otwieranie plików i ich zmiana."
-ready_share_start="Zarejestruj swój router i urządzenie USB w usłudze ReadyCLOUD"
-ready_share_get_account="Jeśli nie masz konta w usłudze ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>kliknij tutaj</a>, aby je utworzyć"
-username="Nazwa użytkownika"
-key_passphrase="Hasło"
-register="Zarejestruj"
-register_note="<b>Uwaga:</b> router będzie utrzymywać połączenie z usługą ReadyCLOUD do momentu wyrejestrowania."
-help_center="Centrum pomocy"
-help_show_hide="Pokaż/ukryj centrum pomocy"
-
-resister_user="Ten router jest przypisany do następującego użytkownika w usłudze ReadyCLOUD:"
-access_storage_method="Możesz teraz zalogować się na stronie<a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, wpisując dane logowania konta ReadyCLOUD, aby uzyskać dostęp do urządzenia USB z dowolnego miejsca."
-unregister_info="Kliknij <B>Wyrejestruj, </B>aby przypisać ten router do innego konta w usłudze ReadyCLOUD"
-unregister="Wyrejestruj"
-
-result_register_ok="Rejestrację ukończono pomyślnie"
-result_register_fail="Rejestracja zakończona niepowodzeniem. Sprawdź nazwę użytkownika oraz hasło i spróbuj ponownie."
-result_unreg_ok="Wyrejestrowanie ukończono pomyślnie"
-result_unreg_fail="Wyrejestrowanie nie powiodło się"
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="Nowy router NETGEAR zostanie przestawiony w tryb punktu dostępo
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="Ustawienia łączności bezprzewodowej w tym routerze uległy zmianie. Połącz urządzenie WiFi z routerem za pomocą następującego identyfikatora SSID i hasła, a następnie kliknij przycisk <b>Zakończ</b>, aby zakończyć instalację."
 bh_wl_ssid_name="Nazwa sieci bezprzewodowej w paśmie 2,4 GHz (identyfikator SSID): "
-bh_wl_password="Klucz sieci bezprzewodowej (hasło)"
+bh_wl_password="Klucz sieci bezprzewodowej (hasło):"
 bh_wl_password_2="Hasło sieci bezprzewodowej w paśmie 2,4 Ghz (klucz sieciowy): "
 bh_wla_ssid_name="Nazwa sieci bezprzewodowej w paśmie 5GHz (identyfikator SSID): "
 bh_wla_password_2="Hasło sieci bezprzewodowej w paśmie 5 Ghz (klucz sieciowy): "
@@ -633,3 +605,4 @@ bh_router_admin="Ustawienia administratora routera:"
 bh_admin_user_name="Nazwa użytkownika administratora:"
 bh_new_admin_passwd="Nowe hasło administratora:"
 bh_passwd_not_blank="Hasło nie może być wartością pustą!"
+finish_mark="Zakończ"

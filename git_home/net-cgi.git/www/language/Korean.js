@@ -184,7 +184,7 @@ bh_connect_success_1="인터넷에 성공적으로 연결되었습니다."
 
 bh_connect_success_2="이 공유기는 다음과 같은 공유 무선 네트워크 이름(SSID)이 사전 설정되어 있습니다."
 
-bh_network_key="네트워크 키(암호)"
+bh_network_key="네트워크 키(암호)."
 
 bh_rollover_help_text="공유기에는 원치 않는 액세스로부터 네트워크를 보호하기 위해 WPA2-PSK 무선 보안이 사전 설정되어 있습니다. 무선 네트워크에 연결하려면 네트워크 키(암호)를 입력해야 합니다. 이 사전 설정은 제품 번호처럼 이 장치에만 해당되는 고유한 설정입니다.  이 설정을 변경하려면 나중에 공유기 웹 GUI의 무선 설정 화면에서 변경할 수 있습니다."
 
@@ -196,7 +196,7 @@ bh_wirless_name="무선 네트워크 이름(SSID)"
 
 bh_wireless="무선"
 
-bh_wpa_wpa2_passpharse="네트워크 키(암호)"
+bh_wpa_wpa2_passpharse="네트워크 키(암호):"
 
 bh_save_settings="Save router settings"
 
@@ -237,34 +237,6 @@ bh_important="중요 업데이트"
 bh_wanlan_conflict_info="인터넷 서비스 프로바이더(ISP)와 충돌을 피하기 위해서 공유기의 IP주소를 업데이트 했습니다. "
 bh_continue_mark="계속"
 bh_same_server_wan_ip="내 IP 주소는 서버 주소와 같을 수 없습니다!"
-
-//readySHARE remote strings
-remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD를 사용하면 인터넷을 통해 공유기의 USB 포트에 연결된 USB 스토리지 장치에 원격으로 액세스할 수 있습니다. ReadyCLOUD를 사용하려면 ReadyCLOUD 계정이 있어야 합니다. ReadyCLOUD 계정이 없는 경우 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">여기를 클릭</a>하고 <b>로그인 > 계정 생성</b>을 클릭합니다. </p><p><b>ReadyCLOUD 설정 방법</b></p><p><ol><li>공유기의 USB 포트에 USB 스토리지 장치를 연결합니다.</li><li>아래 입력란에 ReadyCLOUD 사용자 이름 및 암호를 입력한 후 <b>등록</b> 버튼을 클릭합니다. 공유기 및 USB 장치가 ReadyCLOUD에 등록됩니다.</li><li> <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>을 방문하여 로그인을 클릭한 후 ReadyCLOUD 사용자 이름 및 암호를 입력하고 <b>로그인</b> 버튼을 클릭합니다.</li></ol></p><p>      또한, ReadyCLOUD 앱을 사용하여 컴퓨터 또는 모바일 장치와 공유기의 USB 스토리지 장치 간에 보안 연결을 이용할 수 있습니다.<br>      ReadyCLOUD 앱을 다운로드하려면 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">여기를 클릭</a>하십시오.</p>"
-ready_share_info1="ReadySHARE Cloud를 사용하면 인터넷을 통해 공유기의 USB 포트에 연결되어 있는 USB 스토리지 장치에 원격으로 액세스할 수 있습니다."
-how_setup_ready_share="ReadySHARE Cloud 설정 방법"
-ready_share_step1="1 단계: ReadySHARE Cloud 계정이 필요합니다. 계정이 없으면<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>여기를 클릭하여</a> 계정을 만드십시오."
-ready_share_step2="2 단계: 이 페이지에 ReadySHARE Cloud 사용자 이름과 암호를 입력하여 공유기와 이 공유기에 연결되어 있는 USB 장치를 계정에 등록합니다."
-ready_share_step3="3 단계: 계정을 사용하여 <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>에 로그인합니다. 공유기에 연결되어 있는 USB 장치가 표시됩니다."
-ready_share_set_note="<b>참고:</b> 이 클라이언트를 사용하지 않으면 USB 장치의 컨텐츠를 검색할 수는 있지만 파일을 열거나 변경할 수 없습니다."
-ready_share_start="공유기와 ReadyCLOUD에 연결된 USB를 등록합니다"
-ready_share_get_account="ReadyCLOUD 계정이 없으면 <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>여기를 클릭</a>하여 계정을 만듭니다."
-username="Username"
-key_passphrase="암호"
-register="등록"
-register_note="<b>참고:</b> 공유기는 사용자가 등록 취소할 때까지 ReadyCLOUD와 연결을 계속 유지합니다."
-help_center="도움말 센터"
-help_show_hide="도움말 센터 표시/숨기기"
-
-resister_user="이 공유기에는 다음 ReadyCLOUD 사용자가 등록되었습니다:"
-access_storage_method="이제 어디서든 USB 장치로 액세스할 수 있는 ReadyCLOUD 계정을 사용하여 <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>에 로그인할 수 있습니다."
-unregister_info="다른 ReadyCLOUD 계정으로 이 공유기를 등록하려면 <B>등록 취소</B>를 클릭합니다."
-unregister="등록 취소"
-
-result_register_ok="등록되었습니다."
-result_register_fail="등록하지 못했습니다. 사용자 이름 및 암호를 확인한 후 다시 시도하십시오."
-result_unreg_ok="등록이 취소되었습니다."
-result_unreg_fail="등록을 취소하지 못했습니다."
 
 //WIZ_sel_3g_adsl.htm
 bh_connection_mode="Choosing Connection Mode"
@@ -471,7 +443,7 @@ bh_ap_note_str="새 NETGEAR 공유기를 액세스 포인트 모드로 설정하
 //BRS_ap_detect_01_04.html
 bh_wl_setting_finish="이 공유기의 무선 설정이 변경되었습니다. 다음의 무선 네트워크 이름(SSID) 및 네트워크 키(암호)를 사용하여 장치를 공유기에 다시 연결한 다음 아래의 <b>마침</b> 버튼을 클릭하여 설치를 완료하십시오."
 bh_wl_ssid_name="2.4GHz 무선 네트워크 이름(SSID):"
-bh_wl_password="무선 네트워크 키(암호)"
+bh_wl_password="무선 네트워크 키(암호):"
 bh_wl_password_2="2.4GHz 무선 네트워크 암호(네트워크 키): "
 bh_wla_ssid_name="5GHz 무선 네트워크 이름(SSID): "
 bh_wla_password_2="5GHz 무선 네트워크 암호(네트워크 키): "
@@ -633,3 +605,4 @@ bh_router_admin="공유기 관리자 설정:"
 bh_admin_user_name="관리자 사용자 이름:"
 bh_new_admin_passwd="새 관리자 암호:"
 bh_passwd_not_blank="암호는 공백으로 둘 수 없습니다!"
+finish_mark="마침"
